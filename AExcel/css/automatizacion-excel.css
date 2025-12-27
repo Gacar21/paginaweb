@@ -1,0 +1,209 @@
+/* INFORMACIÓN DEL SERVICIO */
+.service-info {
+    background: #ffffff;
+    padding: 80px 60px;
+}
+
+.info-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.info-container h2 {
+    text-align: center;
+    font-size: 42px;
+    margin-bottom: 50px;
+    color: #1a1a1a;
+}
+
+.info-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.info-block {
+    background: #f8f9fa;
+    padding: 35px;
+    border-radius: 12px;
+    border-left: 5px solid #273a5c;
+}
+
+.info-block h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #273a5c;
+}
+
+.info-block p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #333;
+}
+
+.advantages-disadvantages {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.advantage-box,
+.disadvantage-box {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.advantage-box {
+    border-top: 4px solid #217346;
+}
+
+.disadvantage-box {
+    border-top: 4px solid #d83b01;
+}
+
+.advantage-box h3,
+.disadvantage-box h3 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.advantage-box h3 {
+    color: #217346;
+}
+
+.disadvantage-box h3 {
+    color: #d83b01;
+}
+
+.advantage-box ul,
+.disadvantage-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.advantage-box li,
+.disadvantage-box li {
+    margin-bottom: 15px;
+    padding-left: 25px;
+    position: relative;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #444;
+}
+
+.advantage-box li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #217346;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.disadvantage-box li::before {
+    content: "⚠";
+    position: absolute;
+    left: 0;
+    color: #d83b01;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.cta-block {
+    background: linear-gradient(135deg, #217346 0%, #185c37 100%);
+    color: white;
+    border-left: none;
+    text-align: center;
+}
+
+.cta-block p {
+    color: white;
+    font-size: 17px;
+}
+
+/* PROYECTOS */
+.projects {
+    background: #f2f2ef;
+    padding: 80px 60px;
+}
+
+.projects-title {
+    text-align: center;
+    font-size: 42px;
+    margin-bottom: 60px;
+    color: #1a1a1a;
+}
+
+.projects-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px;
+}
+
+.project-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+.project-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.project-card h3 {
+    font-size: 24px;
+    margin: 25px 25px 15px;
+    color: #217346;
+}
+
+.project-card p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #555;
+    margin: 0 25px 25px;
+}
+
+.project-btn {
+    display: inline-block;
+    margin: 0 25px 30px;
+    padding: 12px 35px;
+    background: #217346;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background 0.3s;
+    font-size: 15px;
+}
+
+.project-btn:hover {
+    background: #185c37;
+}
+
+/* RESPONSIVE */
+@media (max-width: 968px) {
+    .advantages-disadvantages {
+        grid-template-columns: 1fr;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .info-container h2,
+    .projects-title {
+        font-size: 32px;
+    }
+}
