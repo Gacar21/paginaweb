@@ -282,3 +282,263 @@ body {
         flex-direction: column;
     }
 }
+
+/* Agregar estas animaciones al final de tu archivo styles.css */
+
+/* ANIMACIONES DE LOGO */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes coinFlip {
+    0% {
+        transform: rotateY(0deg) scale(0.5);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    25% {
+        transform: rotateY(180deg) scale(1.2);
+    }
+
+    50% {
+        transform: rotateY(360deg) scale(1.5);
+    }
+
+    75% {
+        transform: rotateY(540deg) scale(1.2);
+    }
+
+    100% {
+        transform: rotateY(720deg) scale(1);
+        opacity: 1;
+    }
+}
+
+/* Animación del logo en navbar */
+.navbar .logo img {
+    animation: fadeInDown 0.8s ease-out;
+    transition: transform 0.3s ease;
+}
+
+.navbar .logo img:hover {
+    transform: rotate(360deg) scale(1.1);
+    transition: transform 0.6s ease;
+}
+
+/* Animación del logo hero */
+.hero-logo {
+    animation: float 3s ease-in-out infinite;
+}
+
+.hero-logo:hover {
+    animation: pulse 0.6s ease-in-out;
+}
+
+/* Animación de las imágenes de servicios */
+.service-card img {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.service-card img:hover {
+    transform: scale(1.08) rotate(2deg);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.service-card.circle img:hover {
+    transform: scale(1.12) rotate(-5deg);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Animación del logo en About */
+.about-img img {
+    animation: pulse 2s ease-in-out infinite;
+    transition: transform 0.3s ease;
+}
+
+.about-img img:hover {
+    animation: none;
+    transform: rotate(360deg) scale(1.15);
+    transition: transform 0.8s ease;
+}
+
+/* Animación de botones */
+.service-card button {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.service-card button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.service-card button:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.service-card button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(39, 58, 92, 0.3);
+}
+
+/* Overlay de animación de moneda */
+.coin-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.coin-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.coin-logo {
+    width: 200px;
+    height: 200px;
+    transform-style: preserve-3d;
+    backface-visibility: visible;
+}
+
+/* Animaciones de entrada para las cards */
+.service-card {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.service-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.service-card:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.service-card:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animación del texto hero */
+.hero h1 {
+    animation: fadeInDown 1s ease-out 0.3s both;
+}
+
+.hero p {
+    animation: fadeInDown 1s ease-out 0.6s both;
+}
+
+/* Hover en login */
+.login {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.login::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #273a5c;
+    transition: width 0.3s ease;
+}
+
+.login:hover::after {
+    width: 100%;
+}
+
+.login:hover {
+    color: #273a5c;
+}
+
+/* Animación del formulario */
+.contact-form {
+    transform: translateX(50px);
+    opacity: 0;
+    animation: slideInRight 0.8s ease-out 0.3s forwards;
+}
+
+@keyframes slideInRight {
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.contact-info {
+    transform: translateX(-50px);
+    opacity: 0;
+    animation: slideInLeft 0.8s ease-out 0.3s forwards;
+}
+
+@keyframes slideInLeft {
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
