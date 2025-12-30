@@ -1,196 +1,287 @@
-// Agregar este código a tu archivo main.js
+// ====================================
+// NAVBAR SCROLL Y MENU MOBILE
+// ====================================
+const navbar = document.querySelector('.navbar');
+const menuToggle = document.querySelector('.menu-toggle');
+const navMenu = document.querySelector('.nav-menu');
 
-// Crear el overlay de animación de moneda
-function createCoinOverlay() {
-    const overlay = document.createElement('div');
-    overlay.className = 'coin-overlay';
-    overlay.innerHTML = '<img src="img/logo-big.png" alt="DECOM" class="coin-logo">';
-    document.body.appendChild(overlay);
-    return overlay;
-}
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 100) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
 
-// Inicializar el overlay
-const coinOverlay = createCoinOverlay();
+menuToggle.addEventListener('click', () => {
+    menuToggle.classList.toggle('active');
+    navMenu.classList.toggle('active');
+});
 
-// Función para animar la moneda y redirigir
-function animateCoinAndRedirect(url) {
-    // Activar el overlay
-    coinOverlay.classList.add('active');
-    
-    // Obtener la imagen y forzar la animación
-    const coinLogo = coinOverlay.querySelector('.coin-logo');
-    
-    // Remover y agregar la animación para reiniciarla
-    coinLogo.style.animation = 'none';
-    
-    // Forzar reflow
-    coinLogo.offsetHeight;
-    
-    // Aplicar la animación
-    coinLogo.style.animation = 'coinFlip 1.5s ease-in-out';
-    
-    // Esperar a que termine la animación (1.5s) y redirigir
-    setTimeout(() => {
-        window.location.href = url;
-    }, 1500);
-}
-
-// Agregar evento a todos los botones de servicio
-document.addEventListener('DOMContentLoaded', () => {
-    const serviceButtons = document.querySelectorAll('.service-card button');
-    
-    serviceButtons.forEach(button => {
-        button.addEventListener('click', (e) => {
-            e.preventDefault();
-            const link = button.parentElement;
-            const url = link.getAttribute('href');
-            
-            if (url) {
-                animateCoinAndRedirect(url);
-            }
-        });
+// Cerrar menú al hacer clic en un enlace
+document.querySelectorAll('.nav-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+        menuToggle.classList.remove('active');
+        navMenu.classList.remove('active');
     });
+});
 
-    // Animación de scroll para elementos
-    const observerOptions = {
-        threshold: 0.2,
-        rootMargin: '0px 0px -100px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, observerOptions);
-
-    // Observar las secciones
-    const sections = document.querySelectorAll('.about, .contact');
-    sections.forEach(section => {
-        section.style.opacity = '0';
-        section.style.transform = 'translateY(30px)';
-        section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-        observer.observe(section);
+// ====================================
+// SMOOTH SCROLL
+// ====================================
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
     });
+});
 
-    // Efecto parallax suave en el hero
-    const hero = document.querySelector('.hero');
-    const heroLogo = document.querySelector('.hero-logo');
+// ====================================
+// SISTEMA DE PARTÍCULAS MEJORADO
+// ====================================
+class ParticleSystem {
+    constructor() {
+        this.canvas = document.getElementById('particlesCanvas');
+        if (!this.canvas) return;
+        
+        this.ctx = this.canvas.getContext('2d');
+        this.particles = [];
+        this.particleCount = 80;
+        this.mouse = {
+            x: null,
+            y: null,
+            radius: 120
+        };
+        
+        this.init();
+    }
     
-    if (hero && heroLogo) {
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const parallaxSpeed = 0.5;
+    init() {
+        this.resize();
+        this.createParticles();
+        this.animate();
+        this.setupEventListeners();
+    }
+    
+    resize() {
+        this.canvas.width = this.canvas.offsetWidth;
+        this.canvas.height = this.canvas.offsetHeight;
+    }
+    
+    createParticles() {
+        this.particles = [];
+        for (let i = 0; i < this.particleCount; i++) {
+            this.particles.push({
+                x: Math.random() * this.canvas.width,
+                y: Math.random() * this.canvas.height,
+                vx: (Math.random() - 0.5) * 0.5,
+                vy: (Math.random() - 0.5) * 0.5,
+                size: Math.random() * 2 + 1,
+                opacity: Math.random() * 0.5 + 0.2
+            });
+        }
+    }
+    
+    drawParticles() {
+        this.particles.forEach(p => {
+            this.ctx.beginPath();
+            this.ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+            this.ctx.fillStyle = `rgba(100, 255, 218, ${p.opacity})`;
+            this.ctx.fill();
             
-            if (scrolled < hero.offsetHeight) {
-                heroLogo.style.transform = `translateY(${scrolled * parallaxSpeed}px)`;
-            }
+            // Glow effect
+            this.ctx.shadowBlur = 15;
+            this.ctx.shadowColor = `rgba(100, 255, 218, ${p.opacity})`;
+            this.ctx.fill();
+            this.ctx.shadowBlur = 0;
         });
     }
-
-    // Animación de hover en las tarjetas de servicio
-    const serviceCards = document.querySelectorAll('.service-card');
     
-    serviceCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-10px)';
-            this.style.transition = 'transform 0.3s ease';
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0)';
-        });
-    });
-
-    // Animación suave para el formulario de contacto
-    const formInputs = document.querySelectorAll('.form-group input, .form-group textarea');
-    
-    formInputs.forEach(input => {
-        input.addEventListener('focus', function() {
-            this.style.borderColor = '#273a5c';
-            this.style.transform = 'scale(1.02)';
-            this.style.transition = 'all 0.3s ease';
-        });
-        
-        input.addEventListener('blur', function() {
-            this.style.borderColor = '#d4d4cc';
-            this.style.transform = 'scale(1)';
-        });
-    });
-
-    // Contador animado para números (si quieres agregar estadísticas en el futuro)
-    function animateCounter(element, target, duration) {
-        let current = 0;
-        const increment = target / (duration / 16);
-        
-        const timer = setInterval(() => {
-            current += increment;
-            if (current >= target) {
-                element.textContent = target;
-                clearInterval(timer);
-            } else {
-                element.textContent = Math.floor(current);
-            }
-        }, 16);
-    }
-
-    // Efecto de escritura para el título (opcional)
-    function typeWriter(element, text, speed = 100) {
-        let i = 0;
-        element.textContent = '';
-        
-        function type() {
-            if (i < text.length) {
-                element.textContent += text.charAt(i);
-                i++;
-                setTimeout(type, speed);
+    drawConnections() {
+        for (let i = 0; i < this.particles.length; i++) {
+            for (let j = i + 1; j < this.particles.length; j++) {
+                const dx = this.particles[i].x - this.particles[j].x;
+                const dy = this.particles[i].y - this.particles[j].y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                
+                if (dist < 150) {
+                    this.ctx.beginPath();
+                    this.ctx.strokeStyle = `rgba(100, 255, 218, ${0.15 * (1 - dist / 150)})`;
+                    this.ctx.lineWidth = 1;
+                    this.ctx.moveTo(this.particles[i].x, this.particles[i].y);
+                    this.ctx.lineTo(this.particles[j].x, this.particles[j].y);
+                    this.ctx.stroke();
+                }
             }
         }
-        
-        type();
     }
-
-    // Activar animación de entrada suave para todos los elementos
-    const animatedElements = document.querySelectorAll('.service-card, .about-text, .contact-info');
     
-    const fadeInObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
+    updateParticles() {
+        this.particles.forEach(p => {
+            p.x += p.vx;
+            p.y += p.vy;
+            
+            // Interacción con el mouse
+            if (this.mouse.x !== null && this.mouse.y !== null) {
+                const dx = this.mouse.x - p.x;
+                const dy = this.mouse.y - p.y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                
+                if (dist < this.mouse.radius) {
+                    const force = (this.mouse.radius - dist) / this.mouse.radius;
+                    p.x -= dx / dist * force * 3;
+                    p.y -= dy / dist * force * 3;
+                }
             }
+            
+            // Rebotar en bordes
+            if (p.x < 0 || p.x > this.canvas.width) p.vx *= -1;
+            if (p.y < 0 || p.y > this.canvas.height) p.vy *= -1;
+            
+            // Mantener dentro
+            p.x = Math.max(0, Math.min(this.canvas.width, p.x));
+            p.y = Math.max(0, Math.min(this.canvas.height, p.y));
         });
-    }, { threshold: 0.1 });
+    }
+    
+    animate() {
+        this.ctx.fillStyle = 'rgba(10, 25, 47, 0.1)';
+        this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+        
+        this.drawConnections();
+        this.drawParticles();
+        this.updateParticles();
+        
+        requestAnimationFrame(() => this.animate());
+    }
+    
+    setupEventListeners() {
+        this.canvas.addEventListener('mousemove', (e) => {
+            const rect = this.canvas.getBoundingClientRect();
+            this.mouse.x = e.clientX - rect.left;
+            this.mouse.y = e.clientY - rect.top;
+        });
+        
+        this.canvas.addEventListener('mouseleave', () => {
+            this.mouse.x = null;
+            this.mouse.y = null;
+        });
+        
+        window.addEventListener('resize', () => {
+            this.resize();
+            this.createParticles();
+        });
+    }
+}
 
-    animatedElements.forEach(el => fadeInObserver.observe(el));
+// Inicializar sistema de partículas
+document.addEventListener('DOMContentLoaded', () => {
+    new ParticleSystem();
 });
 
-// Prevenir la animación de moneda si el botón no tiene href
-document.querySelectorAll('.service-card button').forEach(button => {
-    const link = button.parentElement;
-    if (!link.getAttribute('href') || link.getAttribute('href') === '#') {
-        button.addEventListener('click', (e) => {
-            e.preventDefault();
-            // Agregar un pequeño shake si no hay link
-            button.style.animation = 'shake 0.5s';
-            setTimeout(() => {
-                button.style.animation = '';
-            }, 500);
+// ====================================
+// INTERSECTION OBSERVER PARA ANIMACIONES
+// ====================================
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -100px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, observerOptions);
+
+// Observar elementos para animaciones
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.service-card, .about-section, .contact-section').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        observer.observe(el);
+    });
+});
+
+// ====================================
+// ANIMACIÓN DE NÚMEROS EN ESTADÍSTICAS
+// ====================================
+function animateNumbers() {
+    const stats = document.querySelectorAll('.stat-number');
+    
+    stats.forEach(stat => {
+        const target = parseInt(stat.textContent);
+        let count = 0;
+        const increment = target / 50;
+        
+        const updateCount = () => {
+            if (count < target) {
+                count += increment;
+                stat.textContent = Math.ceil(count) + '+';
+                setTimeout(updateCount, 30);
+            } else {
+                stat.textContent = target + '+';
+            }
+        };
+        
+        // Iniciar animación cuando el elemento sea visible
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    updateCount();
+                    statsObserver.unobserve(entry.target);
+                }
+            });
         });
+        
+        statsObserver.observe(stat);
+    });
+}
+
+document.addEventListener('DOMContentLoaded', animateNumbers);
+
+// ====================================
+// EFECTO PARALLAX EN HERO
+// ====================================
+window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const hero = document.querySelector('.hero-content');
+    
+    if (hero && scrolled < window.innerHeight) {
+        hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+        hero.style.opacity = 1 - (scrolled / window.innerHeight);
     }
 });
 
-// Animación shake para botones sin link
-const shakeKeyframes = `
-@keyframes shake {
-    0%, 100% { transform: translateX(0); }
-    25% { transform: translateX(-10px); }
-    75% { transform: translateX(10px); }
-}
-`;
+// ====================================
+// FORM VALIDATION Y SUBMIT
+// ====================================
+const contactForm = document.querySelector('.contact-form-wrapper form');
 
-// Agregar keyframes al documento
-const style = document.createElement('style');
-style.textContent = shakeKeyframes;
-document.head.appendChild(style);
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Obtener valores del formulario
+        const formData = new FormData(contactForm);
+        const data = Object.fromEntries(formData);
+        
+        // Aquí puedes agregar la lógica para enviar el formulario
+        console.log('Formulario enviado:', data);
+        
+        // Mostrar mensaje de éxito
+        alert('¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.');
+        
+        // Limpiar formulario
+        contactForm.reset();
+    });
+}
