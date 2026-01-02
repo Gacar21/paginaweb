@@ -3,80 +3,187 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>DECOM | Proyecto 1</title>
+    <title>DECOM | Análisis Predictivo de Inventario</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/styles.css">
     <link rel="stylesheet" href="css/proyecto2.css">
 </head>
 
 <body>
-
-    <header class="navbar">
+    <!-- NAVBAR -->
+    <nav class="navbar">
         <div class="logo">
             <a href="../../index.html"><img src="../../img/logo.png" alt="DECOM"></a>
         </div>
-        <a href="#" class="login">Iniciar sesión</a>
-    </header>
 
-    <!-- HERO CON DESCRIPCIÓN DEL PROYECTO -->
+        <ul class="nav-menu">
+            <li><a href="../../index.html#inicio">Inicio</a></li>
+            <li><a href="../../index.html#servicios">Servicios</a></li>
+            <li><a href="../../index.html#quienes-somos">Quiénes Somos</a></li>
+            <li><a href="../../index.html#contacto">Contáctanos</a></li>
+        </ul>
+
+        <a href="#" class="login-btn">Iniciar Sesión</a>
+
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- HERO -->
     <section class="hero">
-        <div class="hero-overlay">
+        <div class="hero-grid"></div>
+        <canvas id="particlesCanvas"></canvas>
+
+        <div class="hero-content">
+            <div class="hero-badge">🔮 Proyecto de Análisis Predictivo</div>
             <img src="../../img/logo-big.png" alt="DECOM Logo" class="hero-logo">
-            <h1>Análisis Predictivo de Inventario</h1>
-            <p class="project-subtitle">Analasis y visualizacion de Datos</p>
+            <h1>
+                <span class="gradient-text">Análisis Predictivo</span><br>
+                de Inventario
+            </h1>
+            <p class="hero-subtitle">
+                Optimización inteligente de stock mediante análisis de datos históricos y proyecciones de demanda
+            </p>
+
+            <div class="hero-cta">
+                <a href="#descripcion" class="cta-primary">
+                    Ver Detalles →
+                </a>
+                <a href="#galeria" class="cta-secondary">
+                    Ver Galería
+                </a>
+            </div>
         </div>
     </section>
 
     <!-- DESCRIPCIÓN DEL PROYECTO -->
-    <section class="project-description">
-        <div class="description-container">
-            <h2>Descripción del Proyecto</h2>
-            <p>
-                El sistema de Análisis Predictivo de Inventario fue desarrollado con el objetivo de
-                anticipar la demanda de productos y optimizar los niveles de stock dentro de la
-                organización.
-                Este proyecto surge de la necesidad de utilizar datos históricos para prever
-                comportamientos de consumo, reducir faltantes o excesos de inventario y mejorar
-                la planificación operativa.
-            </p>
+    <section id="descripcion" class="project-description">
+        <div class="section-header">
+            <div class="section-label">Case Study</div>
+            <h2 class="section-title">Descripción del Proyecto</h2>
+        </div>
 
-            <p>
-                El sistema permite el análisis de datos históricos de inventario y ventas, la
-                generación de proyecciones de demanda y la visualización de escenarios futuros.
-                Se implementaron modelos de análisis automatizado, gráficos dinámicos y reportes
-                predictivos, junto con un diseño responsivo que facilita la interpretación de la
-                información.
-                La solución fue pensada para ser escalable, segura y adaptable a distintos entornos
-                logísticos y empresariales.
-            </p>
+        <div class="description-container">
+            <div class="description-content">
+                <p class="description-intro">
+                    El sistema de Análisis Predictivo de Inventario fue desarrollado con el objetivo de
+                    anticipar la demanda de productos y optimizar los niveles de stock dentro de la
+                    organización.
+                    Este proyecto surge de la necesidad de utilizar datos históricos para prever
+                    comportamientos de consumo, reducir faltantes o excesos de inventario y mejorar
+                    la planificación operativa.
+                </p>
+
+                <p>
+                    El sistema permite el análisis de datos históricos de inventario y ventas, la
+                    generación de proyecciones de demanda y la visualización de escenarios futuros.
+                    Se implementaron modelos de análisis automatizado, gráficos dinámicos y reportes
+                    predictivos, junto con un diseño responsivo que facilita la interpretación de la
+                    información.
+                    La solución fue pensada para ser escalable, segura y adaptable a distintos entornos
+                    logísticos y empresariales.
+                </p>
+            </div>
 
             <div class="project-details">
-                <div class="detail-item">
+                <div class="detail-card">
+                    <div class="detail-icon">👤</div>
                     <h3>Cliente</h3>
                     <p>Empresa comercial y logística</p>
                 </div>
-                <div class="detail-item">
+                <div class="detail-card">
+                    <div class="detail-icon">⏱️</div>
                     <h3>Duración</h3>
                     <p>3 meses</p>
                 </div>
-                <div class="detail-item">
+                <div class="detail-card">
+                    <div class="detail-icon">💻</div>
                     <h3>Tecnologías</h3>
                     <p>HTML, CSS, JavaScript, PHP, MySQL</p>
                 </div>
-                <div class="detail-item">
+                <div class="detail-card">
+                    <div class="detail-icon">📅</div>
                     <h3>Año</h3>
                     <p>2025</p>
                 </div>
             </div>
 
+            <!-- Características del Proyecto -->
+            <div class="project-features">
+                <h3 class="features-title">Características Principales</h3>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <span class="feature-icon">🔮</span>
+                        <div class="feature-content">
+                            <h4>Predicción de Demanda</h4>
+                            <p>Algoritmos avanzados que analizan datos históricos para proyectar necesidades futuras de
+                                inventario con alta precisión.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">📊</span>
+                        <div class="feature-content">
+                            <h4>Análisis de Tendencias</h4>
+                            <p>Visualización de patrones de consumo, estacionalidad y comportamiento de productos para
+                                optimizar
+                                el stock.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">⚡</span>
+                        <div class="feature-content">
+                            <h4>Alertas Inteligentes</h4>
+                            <p>Notificaciones automáticas sobre niveles críticos de inventario, productos de baja
+                                rotación y
+                                momentos óptimos de reabastecimiento.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">📈</span>
+                        <div class="feature-content">
+                            <h4>Reportes Predictivos</h4>
+                            <p>Generación de informes con escenarios futuros, proyecciones de ventas y recomendaciones
+                                de compra
+                                basadas en datos.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🎯</span>
+                        <div class="feature-content">
+                            <h4>Optimización de Stock</h4>
+                            <p>Cálculo automático de niveles óptimos de inventario para reducir costos de almacenamiento
+                                y
+                                evitar faltantes.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">📱</span>
+                        <div class="feature-content">
+                            <h4>Interfaz Intuitiva</h4>
+                            <p>Diseño responsive y fácil de usar que permite acceder a análisis complejos desde
+                                cualquier
+                                dispositivo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- SECCIÓN DE VIDEO -->
-    <section class="project-video">
-        <div class="video-container">
-            <h2>Demo del Proyecto</h2>
+    <section id="demo" class="project-video">
+        <div class="section-header">
+            <div class="section-label">Demostración</div>
+            <h2 class="section-title">Demo del Proyecto</h2>
+            <p class="section-description">
+                Mira cómo funciona el sistema de análisis predictivo en acción
+            </p>
+        </div>
 
+        <div class="video-container">
             <!-- OPCIÓN 1: Video de YouTube -->
             <!-- Reemplaza VIDEO_ID con el ID de tu video de YouTube -->
             <!-- <iframe 
@@ -104,52 +211,104 @@
 
             <!-- Placeholder mientras agregas el video -->
             <div class="video-placeholder">
-                <p>📹 Aquí irá el video del proyecto</p>
-                <p class="small-text">Descomenta una de las opciones arriba para agregar tu video</p>
+                <span class="video-icon">📹</span>
+                <p class="video-text">Aquí irá el video del proyecto</p>
+                <p class="video-subtext">Descomenta una de las opciones arriba para agregar tu video</p>
             </div>
         </div>
     </section>
 
     <!-- GALERÍA DE IMÁGENES -->
-    <section class="project-gallery">
-        <div class="gallery-container">
-            <h2>Galería del Proyecto</h2>
+    <section id="galeria" class="project-gallery">
+        <div class="section-header">
+            <div class="section-label">Capturas</div>
+            <h2 class="section-title">Galería del Proyecto</h2>
+            <p class="section-description">
+                Explora las diferentes vistas y funcionalidades del sistema predictivo
+            </p>
+        </div>
 
+        <div class="gallery-container">
             <div class="gallery-grid">
                 <!-- Imagen 1 -->
                 <div class="gallery-item">
-                    <img src="../img/proyecto1-img1.png" alt="Captura 1 del proyecto">
-                    <p class="image-caption">Descripción de la imagen 1</p>
+                    <div class="gallery-image">
+                        <img src="../img/proyecto2-img1.png" alt="Captura 1 del proyecto">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <span class="overlay-icon">🔍</span>
+                                <p>Vista Principal</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h4>Panel de Predicciones</h4>
+                        <p>Dashboard principal con proyecciones de demanda y niveles de stock optimizados</p>
+                    </div>
                 </div>
 
                 <!-- Imagen 2 -->
                 <div class="gallery-item">
-                    <img src="../img/proyecto1-img2.png" alt="Captura 2 del proyecto">
-                    <p class="image-caption">Descripción de la imagen 2</p>
+                    <div class="gallery-image">
+                        <img src="../img/proyecto2-img2.png" alt="Captura 2 del proyecto">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <span class="overlay-icon">🔍</span>
+                                <p>Análisis de Tendencias</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h4>Análisis Histórico</h4>
+                        <p>Visualización de patrones de consumo y comportamiento estacional</p>
+                    </div>
                 </div>
 
                 <!-- Imagen 3 -->
                 <div class="gallery-item">
-                    <img src="../img/proyecto1-img3.png" alt="Captura 3 del proyecto">
-                    <p class="image-caption">Descripción de la imagen 3</p>
+                    <div class="gallery-image">
+                        <img src="../img/proyecto2-img3.png" alt="Captura 3 del proyecto">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <span class="overlay-icon">🔍</span>
+                                <p>Reportes</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h4>Sistema de Alertas</h4>
+                        <p>Notificaciones inteligentes sobre niveles críticos y reabastecimiento</p>
+                    </div>
                 </div>
 
                 <!-- Imagen 4 -->
                 <div class="gallery-item">
-                    <img src="../img/proyecto1-img4.png" alt="Captura 4 del proyecto">
-                    <p class="image-caption">Descripción de la imagen 4</p>
+                    <div class="gallery-image">
+                        <img src="../img/proyecto2-img4.png" alt="Captura 4 del proyecto">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <span class="overlay-icon">🔍</span>
+                                <p>Optimización</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h4>Módulo de Optimización</h4>
+                        <p>Cálculos automáticos de puntos de reorden y cantidades óptimas</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- QUIÉN SOMOS -->
-    <section class="about">
-        <div class="about-content">
-            <div class="about-img">
+    <section class="about-section">
+        <div class="about-grid">
+            <div class="about-image">
                 <img src="../../img/logo-big.png" alt="DECOM Logo">
             </div>
-            <div class="about-text">
+            <div class="about-content">
+                <div class="section-label">Acerca de Nosotros</div>
                 <h2>DECOM - Desarrollo y Optimización Integral de Soluciones Computacionales</h2>
                 <p>
                     Somos una empresa dedicada al desarrollo de soluciones tecnológicas
@@ -158,25 +317,73 @@
                 <p>
                     Transformamos ideas en realidad digital mediante innovación, calidad y compromiso.
                 </p>
+
+                <div class="about-features">
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Experiencia en múltiples industrias</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Soluciones personalizadas y escalables</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Soporte técnico continuo</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Compromiso con la innovación</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- CONTACTO -->
-    <section class="contact">
-        <div class="contact-container">
+    <section id="contacto" class="contact-section">
+        <div class="section-header">
+            <div class="section-label">Contáctanos</div>
+            <h2 class="section-title">¿Te interesa un proyecto similar?</h2>
+            <p class="section-description">
+                Escríbenos y te contactaremos pronto para discutir tu proyecto
+            </p>
+        </div>
+
+        <div class="contact-grid">
             <div class="contact-info">
-                <h2>Contáctanos</h2>
-                <p>¿Quieres que trabajemos juntos? Ingresa tus datos y nos pondremos en contacto contigo en breve.
-                    Esperamos tener noticias tuyas pronto.</p>
+                <h2>Información de Contacto</h2>
+                <p>
+                    Estamos aquí para ayudarte. Envíanos un mensaje y nuestro equipo
+                    te responderá en menos de 24 horas.
+                </p>
+
                 <div class="contact-details">
-                    <h3>Contacto</h3>
-                    <p>backupsystem145@gmail.com</p>
-                    <p>+57 *********</p>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">✉</div>
+                        <div>
+                            <strong>Email</strong><br>
+                            backupsystem145@gmail.com
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">📞</div>
+                        <div>
+                            <strong>Teléfono</strong><br>
+                            +57 *********
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">📍</div>
+                        <div>
+                            <strong>Ubicación</strong><br>
+                            Colombia
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="contact-form">
+            <div class="contact-form-wrapper">
                 <form>
                     <div class="form-row">
                         <div class="form-group">
@@ -195,17 +402,28 @@
                     </div>
 
                     <div class="form-group">
-                        <label>Hablamos de tu negocio <span>(obligatorio)</span></label>
-                        <textarea name="mensaje" rows="5" required></textarea>
+                        <label>Teléfono</label>
+                        <input type="tel" name="telefono">
                     </div>
 
-                    <button type="submit" class="submit-btn">Enviar</button>
+                    <div class="form-group">
+                        <label>Cuéntanos sobre tu proyecto <span>(obligatorio)</span></label>
+                        <textarea name="mensaje" required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Enviar Mensaje</button>
                 </form>
             </div>
         </div>
     </section>
 
-    <script src="../js/main.js"></script>
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2024 DECOM - Todos los derechos reservados | Desarrollo y Optimización Integral de Soluciones
+            Computacionales</p>
+    </footer>
+
+    <script src="../../js/main.js"></script>
 </body>
 
 </html>

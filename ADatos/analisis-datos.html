@@ -10,121 +10,232 @@
 </head>
 
 <body>
-
-    <header class="navbar">
+    <!-- NAVBAR -->
+    <nav class="navbar">
         <div class="logo">
             <a href="../index.html"><img src="../img/logo.png" alt="DECOM"></a>
         </div>
-        <a href="#" class="login">Iniciar sesión</a>
-    </header>
+
+        <ul class="nav-menu">
+            <li><a href="../index.html#inicio">Inicio</a></li>
+            <li><a href="../index.html#servicios">Servicios</a></li>
+            <li><a href="../index.html#quienes-somos">Quiénes Somos</a></li>
+            <li><a href="../index.html#contacto">Contáctanos</a></li>
+        </ul>
+
+        <a href="#" class="login-btn">Iniciar Sesión</a>
+
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
 
     <!-- HERO -->
     <section class="hero">
-        <div class="hero-overlay">
+        <div class="hero-grid"></div>
+        <canvas id="particlesCanvas"></canvas>
+
+        <div class="hero-content">
+            <div class="hero-badge">📊 Servicio Especializado</div>
             <img src="../img/logo-big.png" alt="DECOM Logo" class="hero-logo">
-            <h1>DECOM</h1>
-            <p>Análisis y Visualización de Datos</p>
+            <h1>
+                <span class="gradient-text">Análisis y Visualización</span><br>
+                de Datos
+            </h1>
+            <p class="hero-subtitle">
+                Transformamos datos complejos en información clara y accionable para impulsar tu negocio
+            </p>
+
+            <div class="hero-cta">
+                <a href="#servicio" class="cta-primary">
+                    Conocer Más →
+                </a>
+                <a href="#proyectos" class="cta-secondary">
+                    Ver Proyectos
+                </a>
+            </div>
         </div>
     </section>
 
     <!-- INFORMACIÓN DEL SERVICIO -->
-    <section class="service-info">
+    <section id="servicio" class="service-info">
+        <div class="section-header">
+            <div class="section-label">Nuestro Servicio</div>
+            <h2 class="section-title">¿Por qué analizar y visualizar tus datos?</h2>
+            <p class="section-description">
+                Transformamos procesos manuales en sistemas automatizados eficientes
+            </p>
+        </div>
+
         <div class="info-container">
-            <h2>¿Por qué analizar y visualizar tus datos?</h2>
+            <div class="info-block main-info">
+                <div class="info-icon">🎯</div>
+                <h3>¿Qué hacemos?</h3>
+                <p>
+                    Transformamos datos complejos en información clara, visual y accionable. Creamos dashboards
+                    interactivos, reportes automáticos y análisis predictivos que te permiten entender tu negocio
+                    profundamente y tomar decisiones basadas en evidencia, no en intuición.
+                </p>
+            </div>
 
-            <div class="info-content">
-                <div class="info-block">
-                    <h3> ¿Qué hacemos?</h3>
-                    <p>Transformamos datos complejos en información clara, visual y accionable. Creamos dashboards
-                        interactivos, reportes automáticos y análisis predictivos que te permiten entender tu negocio
-                        profundamente y tomar decisiones basadas en evidencia, no en intuición.</p>
-                </div>
-
-                <div class="advantages-disadvantages">
-                    <div class="advantage-box">
-                        <h3> Ventajas del Análisis de Datos</h3>
-                        <ul>
-                            <li><strong>Decisiones informadas:</strong> Basa tus estrategias en datos reales, no en
-                                suposiciones</li>
-                            <li><strong>Identificación de patrones:</strong> Descubre tendencias ocultas en tu
-                                información</li>
-                            <li><strong>Detección temprana de problemas:</strong> Identifica anomalías antes de que se
-                                conviertan en crisis</li>
-                            <li><strong>Optimización de recursos:</strong> Asigna presupuesto y personal donde realmente
-                                generan valor</li>
-                            <li><strong>Ventaja competitiva:</strong> Anticípate a cambios del mercado con análisis
-                                predictivo</li>
-                            <li><strong>Comprensión del cliente:</strong> Conoce el comportamiento y preferencias de tu
-                                audiencia</li>
-                            <li><strong>Medición de KPIs:</strong> Monitorea indicadores clave de rendimiento en tiempo
-                                real</li>
-                            <li><strong>ROI demostrable:</strong> Justifica inversiones con evidencia cuantificable</li>
-                            <li><strong>Comunicación efectiva:</strong> Los gráficos comunican mejor que miles de
-                                números</li>
-                        </ul>
+            <div class="advantages-disadvantages">
+                <div class="advantage-box">
+                    <div class="box-header">
+                        <span class="box-icon">✓</span>
+                        <h3>Ventajas del Análisis de Datos</h3>
                     </div>
+                    <ul>
+                        <li>
+                            <strong>Decisiones informadas:</strong> Basa tus estrategias en datos reales, no en
+                            suposiciones
+                        </li>
+                        <li>
+                            <strong>Identificación de patrones:</strong> Descubre tendencias ocultas en tu información
+                        </li>
+                        <li>
+                            <strong>Detección temprana de problemas:</strong> Identifica anomalías antes de que se
+                            conviertan en crisis
+                        </li>
+                        <li>
+                            <strong>Optimización de recursos:</strong> Asigna presupuesto y personal donde realmente
+                            generan valor
+                        </li>
+                        <li>
+                            <strong>Ventaja competitiva:</strong> Anticípate a cambios del mercado con análisis
+                            predictivo
+                        </li>
+                        <li>
+                            <strong>Comprensión del cliente:</strong> Conoce el comportamiento y preferencias de tu
+                            audiencia
+                        </li>
+                        <li>
+                            <strong>Medición de KPIs:</strong> Monitorea indicadores clave de rendimiento en tiempo real
+                        </li>
+                        <li>
+                            <strong>ROI demostrable:</strong> Justifica inversiones con evidencia cuantificable
+                        </li>
+                        <li>
+                            <strong>Comunicación efectiva:</strong> Los gráficos comunican mejor que miles de números
+                        </li>
+                    </ul>
+                </div>
 
-                    <div class="disadvantage-box">
-                        <h3> Consideraciones Importantes</h3>
-                        <ul>
-                            <li><strong>Calidad de datos:</strong> El análisis es tan bueno como la calidad de los datos
-                                de entrada</li>
-                            <li><strong>Interpretación requerida:</strong> Los datos necesitan contexto y experiencia
-                                para interpretarse correctamente</li>
-                            <li><strong>Inversión en herramientas:</strong> Software de análisis y visualización tiene
-                                costos asociados</li>
-                            <li><strong>Capacitación necesaria:</strong> El equipo debe aprender a usar dashboards y
-                                leer métricas</li>
-                            <li><strong>Tiempo de implementación:</strong> Configurar sistemas de análisis toma tiempo
-                                inicial</li>
-                            <li><strong>Mantenimiento continuo:</strong> Los reportes necesitan actualizaciones según
-                                cambios del negocio</li>
-                            <li><strong>Riesgo de parálisis por análisis:</strong> Demasiados datos pueden dificultar la
-                                toma de decisiones</li>
-                        </ul>
+                <div class="disadvantage-box">
+                    <div class="box-header">
+                        <span class="box-icon">⚠</span>
+                        <h3>Consideraciones Importantes</h3>
                     </div>
+                    <ul>
+                        <li>
+                            <strong>Calidad de datos:</strong> El análisis es tan bueno como la calidad de los datos de
+                            entrada
+                        </li>
+                        <li>
+                            <strong>Interpretación requerida:</strong> Los datos necesitan contexto y experiencia para
+                            interpretarse correctamente
+                        </li>
+                        <li>
+                            <strong>Inversión en herramientas:</strong> Software de análisis y visualización tiene
+                            costos asociados
+                        </li>
+                        <li>
+                            <strong>Capacitación necesaria:</strong> El equipo debe aprender a usar dashboards y leer
+                            métricas
+                        </li>
+                        <li>
+                            <strong>Tiempo de implementación:</strong> Configurar sistemas de análisis toma tiempo
+                            inicial
+                        </li>
+                        <li>
+                            <strong>Mantenimiento continuo:</strong> Los reportes necesitan actualizaciones según
+                            cambios del negocio
+                        </li>
+                        <li>
+                            <strong>Riesgo de parálisis por análisis:</strong> Demasiados datos pueden dificultar la
+                            toma de decisiones
+                        </li>
+                    </ul>
                 </div>
+            </div>
 
-                <div class="info-block cta-block">
-                    <p><strong> Nuestro valor agregado:</strong> No solo entregamos gráficos bonitos. Te enseñamos a
-                        leer e interpretar tus datos, configuramos alertas automáticas para métricas críticas y
-                        diseñamos dashboards que responden las preguntas específicas de tu negocio. Convertimos el
-                        análisis de datos en una ventaja competitiva real.</p>
-                </div>
+            <div class="info-block cta-block">
+                <div class="cta-icon">💡</div>
+                <p>
+                    <strong>Nuestro valor agregado:</strong> No solo entregamos gráficos bonitos. Te enseñamos a leer e
+                    interpretar tus datos, configuramos
+                    alertas automáticas para métricas críticas y diseñamos dashboards que responden las preguntas
+                    específicas de tu negocio. Convertimos el análisis de datos en una ventaja competitiva real.
+                </p>
             </div>
         </div>
     </section>
 
     <!-- EJEMPLOS DE PROYECTOS -->
-    <section class="projects">
-        <h2 class="projects-title">Ejemplos de Proyectos</h2>
+    <section id="proyectos" class="projects">
+        <div class="section-header">
+            <div class="section-label">Portfolio</div>
+            <h2 class="section-title">Ejemplos de Proyectos</h2>
+            <p class="section-description">
+                Explora cómo hemos transformado datos en valor para nuestros clientes
+            </p>
+        </div>
 
         <div class="projects-grid">
             <div class="project-card">
-                <img src="../img/proyecto-datos-1.png" alt="Proyecto Análisis de Datos 1">
-                <h3>Dashboard Ejecutivo de Ventas</h3>
-                <p>Panel interactivo en tiempo real que muestra métricas clave de ventas, tendencias mensuales,
-                    comparativas por región y análisis de productos más rentables con visualizaciones dinámicas.</p>
-                <a href="proyecto1/proyecto1.html" class="project-btn">Inspeccionar</a>
+                <div class="project-image">
+                    <img src="../img/proyecto-datos-1.png" alt="Dashboard Ejecutivo de Ventas">
+                    <div class="project-overlay">
+                        <a href="proyecto1/proyecto1.html" class="project-btn">Ver Proyecto →</a>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3>Dashboard Ejecutivo de Ventas</h3>
+                    <p>
+                        Panel interactivo en tiempo real que muestra métricas clave de ventas, tendencias mensuales,
+                        comparativas por región y análisis de productos más rentables con visualizaciones dinámicas.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Ventas</span>
+                        <span class="tag">Tiempo Real</span>
+                        <span class="tag">KPIs</span>
+                    </div>
+                </div>
             </div>
 
             <div class="project-card">
-                <img src="../img/proyecto-datos-2.png" alt="Proyecto Análisis de Datos 2">
-                <h3>Análisis Predictivo de Inventario</h3>
-                <p>Sistema de análisis que predice demanda futura, optimiza niveles de stock, identifica productos de
-                    baja rotación y genera alertas automáticas para reabastecimiento inteligente.</p>
-                <a href="proyecto2/proyecto2.html" class="project-btn">Inspeccionar</a>
+                <div class="project-image">
+                    <img src="../img/proyecto-datos-2.png" alt="Análisis Predictivo de Inventario">
+                    <div class="project-overlay">
+                        <a href="proyecto2/proyecto2.html" class="project-btn">Ver Proyecto →</a>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3>Análisis Predictivo de Inventario</h3>
+                    <p>
+                        Sistema de análisis que predice demanda futura, optimiza niveles de stock, identifica productos
+                        de
+                        baja rotación y genera alertas automáticas para reabastecimiento inteligente.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Inventario</span>
+                        <span class="tag">Machine Learning</span>
+                        <span class="tag">Alertas</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- QUIÉN SOMOS -->
-    <section class="about">
-        <div class="about-content">
-            <div class="about-img">
+    <section class="about-section">
+        <div class="about-grid">
+            <div class="about-image">
                 <img src="../img/logo-big.png" alt="DECOM Logo">
             </div>
-            <div class="about-text">
+            <div class="about-content">
+                <div class="section-label">Acerca de Nosotros</div>
                 <h2>DECOM - Desarrollo y Optimización Integral de Soluciones Computacionales</h2>
                 <p>
                     Somos una empresa dedicada al desarrollo de soluciones tecnológicas
@@ -133,25 +244,73 @@
                 <p>
                     Transformamos ideas en realidad digital mediante innovación, calidad y compromiso.
                 </p>
+
+                <div class="about-features">
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Experiencia en múltiples industrias</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Soluciones personalizadas y escalables</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Soporte técnico continuo</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Compromiso con la innovación</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- CONTACTO -->
-    <section class="contact">
-        <div class="contact-container">
+    <section id="contacto" class="contact-section">
+        <div class="section-header">
+            <div class="section-label">Contáctanos</div>
+            <h2 class="section-title">¿Te interesa este servicio?</h2>
+            <p class="section-description">
+                Escríbenos y te contactaremos pronto para discutir tu proyecto
+            </p>
+        </div>
+
+        <div class="contact-grid">
             <div class="contact-info">
-                <h2>Contáctanos</h2>
-                <p>¿Quieres que trabajemos juntos? Ingresa tus datos y nos pondremos en contacto contigo en breve.
-                    Esperamos tener noticias tuyas pronto.</p>
+                <h2>Información de Contacto</h2>
+                <p>
+                    Estamos aquí para ayudarte. Envíanos un mensaje y nuestro equipo
+                    te responderá en menos de 24 horas.
+                </p>
+
                 <div class="contact-details">
-                    <h3>Contacto</h3>
-                    <p>backupsystem145@gmail.com</p>
-                    <p>+57 *********</p>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">✉</div>
+                        <div>
+                            <strong>Email</strong><br>
+                            backupsystem145@gmail.com
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">📞</div>
+                        <div>
+                            <strong>Teléfono</strong><br>
+                            +57 *********
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">📍</div>
+                        <div>
+                            <strong>Ubicación</strong><br>
+                            Colombia
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="contact-form">
+            <div class="contact-form-wrapper">
                 <form>
                     <div class="form-row">
                         <div class="form-group">
@@ -170,15 +329,26 @@
                     </div>
 
                     <div class="form-group">
-                        <label>Hablamos de tu negocio <span>(obligatorio)</span></label>
-                        <textarea name="mensaje" rows="5" required></textarea>
+                        <label>Teléfono</label>
+                        <input type="tel" name="telefono">
                     </div>
 
-                    <button type="submit" class="submit-btn">Enviar</button>
+                    <div class="form-group">
+                        <label>Cuéntanos sobre tu proyecto <span>(obligatorio)</span></label>
+                        <textarea name="mensaje" required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Enviar Mensaje</button>
                 </form>
             </div>
         </div>
     </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2024 DECOM - Todos los derechos reservados | Desarrollo y Optimización Integral de Soluciones
+            Computacionales</p>
+    </footer>
 
     <script src="../js/main.js"></script>
 </body>

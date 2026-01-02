@@ -10,118 +10,220 @@
 </head>
 
 <body>
-
-    <header class="navbar">
+    <!-- NAVBAR -->
+    <nav class="navbar">
         <div class="logo">
             <a href="../index.html"><img src="../img/logo.png" alt="DECOM"></a>
         </div>
-        <a href="#" class="login">Iniciar sesión</a>
-    </header>
+
+        <ul class="nav-menu">
+            <li><a href="../index.html#inicio">Inicio</a></li>
+            <li><a href="../index.html#servicios">Servicios</a></li>
+            <li><a href="../index.html#quienes-somos">Quiénes Somos</a></li>
+            <li><a href="../index.html#contacto">Contáctanos</a></li>
+        </ul>
+
+        <a href="#" class="login-btn">Iniciar Sesión</a>
+
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
 
     <!-- HERO -->
     <section class="hero">
-        <div class="hero-overlay">
+        <div class="hero-grid"></div>
+        <canvas id="particlesCanvas"></canvas>
+
+        <div class="hero-content">
+            <div class="hero-badge">📈 Automatización de Excel</div>
             <img src="../img/logo-big.png" alt="DECOM Logo" class="hero-logo">
-            <h1>DECOM</h1>
-            <p>Automatización de Hojas de Excel con Macros</p>
+            <h1>
+                <span class="gradient-text">Automatización de Excel</span><br>
+                con Macros y VBA
+            </h1>
+            <p class="hero-subtitle">
+                Transformamos hojas de cálculo estáticas en herramientas dinámicas e inteligentes
+                que optimizan tus procesos de trabajo
+            </p>
+
+            <div class="hero-cta">
+                <a href="#proyectos" class="cta-primary">
+                    Ver Proyectos →
+                </a>
+                <a href="#contacto" class="cta-secondary">
+                    Solicitar Presupuesto
+                </a>
+            </div>
         </div>
     </section>
 
     <!-- INFORMACIÓN DEL SERVICIO -->
-    <section class="service-info">
+    <section id="informacion" class="service-info">
+        <div class="section-header">
+            <div class="section-label">¿Por qué elegirnos?</div>
+            <h2 class="section-title">Automatización con Macros y VBA</h2>
+            <p class="section-description">
+                Potencia tu productividad con soluciones personalizadas en Excel
+            </p>
+        </div>
+
         <div class="info-container">
-            <h2>¿Por qué automatizar Excel con macros?</h2>
+            <div class="info-block main-info">
+                <div class="info-icon">💡</div>
+                <h3>¿Qué hacemos?</h3>
+                <p>Desarrollamos soluciones de automatización en Excel mediante macros personalizadas (VBA) que
+                    transforman hojas de cálculo estáticas en herramientas dinámicas e inteligentes. Desde reportes
+                    automáticos hasta sistemas completos de gestión, optimizamos tus procesos de trabajo con Excel.</p>
+            </div>
 
-            <div class="info-content">
-                <div class="info-block">
-                    <h3> ¿Qué hacemos?</h3>
-                    <p>Desarrollamos soluciones de automatización en Excel mediante macros personalizadas (VBA) que
-                        transforman hojas de cálculo estáticas en herramientas dinámicas e inteligentes. Desde reportes
-                        automáticos hasta sistemas completos de gestión, optimizamos tus procesos de trabajo con Excel.
-                    </p>
-                </div>
-
-                <div class="advantages-disadvantages">
-                    <div class="advantage-box">
-                        <h3> Ventajas de Automatizar con Macros</h3>
-                        <ul>
-                            <li><strong>Ahorro masivo de tiempo:</strong> Tareas que toman horas se completan en
-                                segundos</li>
-                            <li><strong>Eliminación de errores:</strong> Los procesos automatizados son consistentes y
-                                precisos</li>
-                            <li><strong>Familiaridad del entorno:</strong> Tus empleados ya conocen Excel, no hay nueva
-                                plataforma que aprender</li>
-                            <li><strong>Procesamiento de grandes volúmenes:</strong> Maneja miles de registros sin
-                                esfuerzo manual</li>
-                            <li><strong>Reportes instantáneos:</strong> Genera informes complejos con un solo clic</li>
-                            <li><strong>Costo-efectivo:</strong> No requiere software adicional, usa tu Excel existente
-                            </li>
-                            <li><strong>Personalización total:</strong> Soluciones adaptadas exactamente a tu flujo de
-                                trabajo</li>
-                            <li><strong>Integración con otros sistemas:</strong> Conecta Excel con bases de datos, APIs
-                                y otros programas</li>
-                        </ul>
+            <div class="advantages-disadvantages">
+                <div class="advantage-box">
+                    <div class="box-header">
+                        <span class="box-icon">✓</span>
+                        <h3>Ventajas de Automatizar con Macros</h3>
                     </div>
+                    <ul>
+                        <li>
+                            <strong>Ahorro masivo de tiempo:</strong>
+                            Tareas que toman horas se completan en segundos
+                        </li>
+                        <li>
+                            <strong>Eliminación de errores:</strong>
+                            Los procesos automatizados son consistentes y precisos
+                        </li>
+                        <li>
+                            <strong>Familiaridad del entorno:</strong>
+                            Tus empleados ya conocen Excel, no hay nueva plataforma que aprender
+                        </li>
+                        <li>
+                            <strong>Procesamiento de grandes volúmenes:</strong>
+                            Maneja miles de registros sin esfuerzo manual
+                        </li>
+                        <li>
+                            <strong>Reportes instantáneos:</strong>
+                            Genera informes complejos con un solo clic
+                        </li>
+                        <li>
+                            <strong>Costo-efectivo:</strong>
+                            No requiere software adicional, usa tu Excel existente
+                        </li>
+                        <li>
+                            <strong>Personalización total:</strong>
+                            Soluciones adaptadas exactamente a tu flujo de trabajo
+                        </li>
+                        <li>
+                            <strong>Integración con otros sistemas:</strong>
+                            Conecta Excel con bases de datos, APIs y otros programas
+                        </li>
+                    </ul>
+                </div>
 
-                    <div class="disadvantage-box">
-                        <h3> Consideraciones Importantes</h3>
-                        <ul>
-                            <li><strong>Limitaciones de Excel:</strong> No recomendado para bases de datos con más de
-                                100,000 registros activos</li>
-                            <li><strong>Dependencia de Excel:</strong> Requiere tener Microsoft Excel instalado (no
-                                funciona en hojas de cálculo de Google)</li>
-                            <li><strong>Seguridad de macros:</strong> Algunos entornos corporativos bloquean macros por
-                                políticas de seguridad</li>
-                            <li><strong>Mantenimiento:</strong> Las macros complejas necesitan actualizaciones si
-                                cambian los procesos</li>
-                            <li><strong>Compatibilidad de versiones:</strong> Algunas funciones pueden variar entre
-                                versiones de Excel</li>
-                            <li><strong>Documentación necesaria:</strong> El código debe estar bien documentado para
-                                futuras modificaciones</li>
-                        </ul>
+                <div class="disadvantage-box">
+                    <div class="box-header">
+                        <span class="box-icon">⚠</span>
+                        <h3>Consideraciones Importantes</h3>
                     </div>
+                    <ul>
+                        <li>
+                            <strong>Limitaciones de Excel:</strong>
+                            No recomendado para bases de datos con más de 100,000 registros activos
+                        </li>
+                        <li>
+                            <strong>Dependencia de Excel:</strong>
+                            Requiere tener Microsoft Excel instalado (no funciona en hojas de cálculo de Google)
+                        </li>
+                        <li>
+                            <strong>Seguridad de macros:</strong>
+                            Algunos entornos corporativos bloquean macros por políticas de seguridad
+                        </li>
+                        <li>
+                            <strong>Mantenimiento:</strong>
+                            Las macros complejas necesitan actualizaciones si cambian los procesos
+                        </li>
+                        <li>
+                            <strong>Compatibilidad de versiones:</strong>
+                            Algunas funciones pueden variar entre versiones de Excel
+                        </li>
+                        <li>
+                            <strong>Documentación necesaria:</strong>
+                            El código debe estar bien documentado para futuras modificaciones
+                        </li>
+                    </ul>
                 </div>
+            </div>
 
-                <div class="info-block cta-block">
-                    <p><strong>💡 Nuestra experiencia:</strong> Creamos macros robustas, bien documentadas y fáciles de
-                        mantener. Te capacitamos para que puedas usar y entender tu nueva herramienta. Si tus procesos
-                        superan las capacidades de Excel, te recomendaremos migrar a una solución de base de datos más
-                        apropiada.</p>
-                </div>
+            <div class="info-block cta-block">
+                <div class="cta-icon">🎯</div>
+                <p><strong>Nuestra experiencia:</strong> Creamos macros robustas, bien documentadas y fáciles de
+                    mantener. Te capacitamos para que puedas usar y entender tu nueva herramienta. Si tus procesos
+                    superan las capacidades de Excel, te recomendaremos migrar a una solución de base de datos más
+                    apropiada.</p>
             </div>
         </div>
     </section>
 
     <!-- EJEMPLOS DE PROYECTOS -->
-    <section class="projects">
-        <h2 class="projects-title">Ejemplos de Proyectos</h2>
+    <section id="proyectos" class="projects">
+        <div class="section-header">
+            <div class="section-label">Nuestro Trabajo</div>
+            <h2 class="section-title">Ejemplos de Proyectos</h2>
+            <p class="section-description">
+                Casos de éxito de automatizaciones implementadas en Excel
+            </p>
+        </div>
 
         <div class="projects-grid">
             <div class="project-card">
-                <img src="../img/proyecto-excel-1.png" alt="Proyecto Excel 1">
-                <h3>Sistema de Facturación Automatizada</h3>
-                <p>Macro que genera facturas automáticamente desde una base de datos, calcula impuestos, aplica
-                    descuentos y exporta documentos en PDF listos para enviar.</p>
-                <a href="proyecto1/proyecto1.html" class="project-btn">Inspeccionar</a>
+                <div class="project-image">
+                    <img src="../img/proyecto-excel-1.png" alt="Proyecto Excel 1">
+                    <div class="project-overlay">
+                        <a href="proyecto1/proyecto1.html" class="project-btn">Ver Proyecto →</a>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3>Sistema de Facturación Automatizada</h3>
+                    <p>Macro que genera facturas automáticamente desde una base de datos, calcula impuestos, aplica
+                        descuentos y exporta documentos en PDF listos para enviar.</p>
+                    <div class="project-tags">
+                        <span class="tag">VBA</span>
+                        <span class="tag">Macros</span>
+                        <span class="tag">PDF Export</span>
+                    </div>
+                </div>
             </div>
 
             <div class="project-card">
-                <img src="../img/proyecto-excel-2.png" alt="Proyecto Excel 2">
-                <h3>Consolidador de Reportes Mensuales</h3>
-                <p>Sistema que recopila datos de múltiples hojas, consolida información de diferentes áreas y genera
-                    reportes ejecutivos con gráficos automáticos.</p>
-                <a href="proyecto2/proyecto2.html" class="project-btn">Inspeccionar</a>
+                <div class="project-image">
+                    <img src="../img/proyecto-excel-2.png" alt="Proyecto Excel 2">
+                    <div class="project-overlay">
+                        <a href="proyecto2/proyecto2.html" class="project-btn">Ver Proyecto →</a>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3>Consolidador de Reportes Mensuales</h3>
+                    <p>Sistema que recopila datos de múltiples hojas, consolida información de diferentes áreas y genera
+                        reportes ejecutivos con gráficos automáticos.</p>
+                    <div class="project-tags">
+                        <span class="tag">VBA</span>
+                        <span class="tag">Reportes</span>
+                        <span class="tag">Automatización</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- QUIÉN SOMOS -->
-    <section class="about">
-        <div class="about-content">
-            <div class="about-img">
+    <section class="about-section">
+        <div class="about-grid">
+            <div class="about-image">
                 <img src="../img/logo-big.png" alt="DECOM Logo">
             </div>
-            <div class="about-text">
+            <div class="about-content">
+                <div class="section-label">Acerca de Nosotros</div>
                 <h2>DECOM - Desarrollo y Optimización Integral de Soluciones Computacionales</h2>
                 <p>
                     Somos una empresa dedicada al desarrollo de soluciones tecnológicas
@@ -130,25 +232,73 @@
                 <p>
                     Transformamos ideas en realidad digital mediante innovación, calidad y compromiso.
                 </p>
+
+                <div class="about-features">
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Experiencia en múltiples industrias</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Soluciones personalizadas y escalables</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Soporte técnico continuo</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Compromiso con la innovación</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- CONTACTO -->
-    <section class="contact">
-        <div class="contact-container">
+    <section id="contacto" class="contact-section">
+        <div class="section-header">
+            <div class="section-label">Contáctanos</div>
+            <h2 class="section-title">Hablemos de tu Proyecto</h2>
+            <p class="section-description">
+                ¿Listo para automatizar tus procesos en Excel? Escríbenos y te contactaremos pronto.
+            </p>
+        </div>
+
+        <div class="contact-grid">
             <div class="contact-info">
-                <h2>Contáctanos</h2>
-                <p>¿Quieres que trabajemos juntos? Ingresa tus datos y nos pondremos en contacto contigo en breve.
-                    Esperamos tener noticias tuyas pronto.</p>
+                <h2>Información de Contacto</h2>
+                <p>
+                    Estamos aquí para ayudarte. Envíanos un mensaje y nuestro equipo
+                    te responderá en menos de 24 horas.
+                </p>
+
                 <div class="contact-details">
-                    <h3>Contacto</h3>
-                    <p>backupsystem145@gmail.com</p>
-                    <p>+57 *********</p>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">✉</div>
+                        <div>
+                            <strong>Email</strong><br>
+                            backupsystem145@gmail.com
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">📞</div>
+                        <div>
+                            <strong>Teléfono</strong><br>
+                            +57 *********
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">📍</div>
+                        <div>
+                            <strong>Ubicación</strong><br>
+                            Colombia
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="contact-form">
+            <div class="contact-form-wrapper">
                 <form>
                     <div class="form-row">
                         <div class="form-group">
@@ -167,15 +317,26 @@
                     </div>
 
                     <div class="form-group">
-                        <label>Hablamos de tu negocio <span>(obligatorio)</span></label>
-                        <textarea name="mensaje" rows="5" required></textarea>
+                        <label>Teléfono</label>
+                        <input type="tel" name="telefono">
                     </div>
 
-                    <button type="submit" class="submit-btn">Enviar</button>
+                    <div class="form-group">
+                        <label>Cuéntanos sobre tu proyecto <span>(obligatorio)</span></label>
+                        <textarea name="mensaje" required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Enviar Mensaje</button>
                 </form>
             </div>
         </div>
     </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2024 DECOM - Todos los derechos reservados | Desarrollo y Optimización Integral de Soluciones
+            Computacionales</p>
+    </footer>
 
     <script src="../js/main.js"></script>
 </body>
