@@ -67,7 +67,7 @@
 }
 
 .hero-logo {
-    width: 150px;
+    width: 140px;
     height: auto;
     margin-bottom: 2rem;
     filter: drop-shadow(0 0 30px rgba(100, 255, 218, 0.3));
@@ -78,23 +78,23 @@
 
     0%,
     100% {
-        transform: translateY(0);
+        transform: translateY(10px);
     }
 
     50% {
-        transform: translateY(-20px);
+        transform: translateY(50px);
     }
 }
 
 @keyframes fadeInDown {
     from {
         opacity: 0;
-        transform: translateY(-30px);
+        transform: translateY(40px);
     }
 
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(20);
     }
 }
 

@@ -10,98 +10,226 @@
 </head>
 
 <body>
-
-    <header class="navbar">
+    <!-- NAVBAR -->
+    <nav class="navbar">
         <div class="logo">
-            <a href="../index.html"><img src="../img/logo.png" alt="DECOM"></a>
+            <a href="../index.html"><img src="img/logo.png" alt="DECOM"></a>
         </div>
-        <a href="#" class="login">Iniciar sesión</a>
-    </header>
+
+        <ul class="nav-menu">
+            <li><a href="../index.html#inicio">Inicio</a></li>
+            <li><a href="../index.html#servicios">Servicios</a></li>
+            <li><a href="../index.html#quienes-somos">Quiénes Somos</a></li>
+            <li><a href="../index.html#contacto">Contáctanos</a></li>
+        </ul>
+
+        <a href="#" class="login-btn">Iniciar Sesión</a>
+
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
 
     <!-- HERO -->
     <section class="hero">
-        <div class="hero-overlay">
+        <div class="hero-grid"></div>
+        <canvas id="particlesCanvas"></canvas>
+
+        <div class="hero-content">
+            <div class="hero-badge">🌐 Desarrollo Web Profesional</div>
             <img src="../img/logo-big.png" alt="DECOM Logo" class="hero-logo">
-            <h1>DECOM</h1>
-            <p>Creación de Páginas Web Profesionales</p>
+            <h1>
+                <span class="gradient-text">Páginas Web que</span><br>
+                Convierten Visitantes en Clientes
+            </h1>
+            <p class="hero-subtitle">
+                Diseñamos y desarrollamos sitios web modernos, responsivos y optimizados que se convierten
+                en tu mejor herramienta de ventas. Experiencias digitales que conectan con tu audiencia
+                y generan resultados medibles.
+            </p>
+
+            <div class="hero-cta">
+                <a href="#proyectos" class="cta-primary">
+                    Ver Proyectos →
+                </a>
+                <a href="#contacto" class="cta-secondary">
+                    Solicitar Presupuesto
+                </a>
+            </div>
         </div>
     </section>
 
     <!-- INFORMACIÓN DEL SERVICIO -->
-    <section class="service-info">
+    <section id="informacion" class="service-info">
+        <div class="section-header">
+            <div class="section-label">¿Por qué elegirnos?</div>
+            <h2 class="section-title">¿Por qué necesitas una página web profesional?</h2>
+            <p class="section-description">
+                Transformamos tu presencia digital en una poderosa herramienta de crecimiento
+            </p>
+        </div>
+
         <div class="info-container">
-            <h2>¿Por qué necesitas una página web profesional?</h2>
-            
-            <div class="info-content">
-                <div class="info-block">
-                    <h3> ¿Qué hacemos?</h3>
-                    <p>Diseñamos y desarrollamos sitios web modernos, responsivos y optimizados que se convierten en tu mejor herramienta de ventas. Desde páginas corporativas hasta tiendas en línea, creamos experiencias digitales que conectan con tu audiencia y generan resultados medibles.</p>
-                </div>
+            <div class="info-block main-info">
+                <div class="info-icon">💡</div>
+                <h3>¿Qué hacemos?</h3>
+                <p>Diseñamos y desarrollamos sitios web modernos, responsivos y optimizados que se convierten en tu
+                    mejor
+                    herramienta de ventas. Desde páginas corporativas hasta tiendas en línea, creamos experiencias
+                    digitales
+                    que conectan con tu audiencia y generan resultados medibles.</p>
+            </div>
 
-                <div class="advantages-disadvantages">
-                    <div class="advantage-box">
-                        <h3> Ventajas de Tener un Sitio Web</h3>
-                        <ul>
-                            <li><strong>Presencia digital 24/7:</strong> Tu negocio accesible en cualquier momento desde cualquier lugar</li>
-                            <li><strong>Credibilidad profesional:</strong> Una web de calidad transmite confianza y seriedad</li>
-                            <li><strong>Alcance global:</strong> Expande tu mercado más allá de tu ubicación física</li>
-                            <li><strong>Marketing rentable:</strong> Plataforma para todas tus estrategias de marketing digital</li>
-                            <li><strong>Generación de leads:</strong> Captura información de clientes potenciales automáticamente</li>
-                            <li><strong>Análisis y métricas:</strong> Conoce a tu audiencia y optimiza tu estrategia con datos reales</li>
-                            <li><strong>Ventaja competitiva:</strong> Destaca frente a competidores sin presencia web</li>
-                            <li><strong>Escalabilidad:</strong> Tu sitio crece con tu negocio sin límites físicos</li>
-                            <li><strong>Comunicación directa:</strong> Mantén informados a tus clientes sobre novedades y ofertas</li>
-                        </ul>
+            <div class="advantages-disadvantages">
+                <div class="advantage-box">
+                    <div class="box-header">
+                        <span class="box-icon">✓</span>
+                        <h3>Ventajas de Tener un Sitio Web</h3>
                     </div>
+                    <ul>
+                        <li>
+                            <strong>Presencia digital 24/7:</strong>
+                            Tu negocio accesible en cualquier momento desde cualquier lugar
+                        </li>
+                        <li>
+                            <strong>Credibilidad profesional:</strong>
+                            Una web de calidad transmite confianza y seriedad
+                        </li>
+                        <li>
+                            <strong>Alcance global:</strong>
+                            Expande tu mercado más allá de tu ubicación física
+                        </li>
+                        <li>
+                            <strong>Marketing rentable:</strong>
+                            Plataforma para todas tus estrategias de marketing digital
+                        </li>
+                        <li>
+                            <strong>Generación de leads:</strong>
+                            Captura información de clientes potenciales automáticamente
+                        </li>
+                        <li>
+                            <strong>Análisis y métricas:</strong>
+                            Conoce a tu audiencia y optimiza tu estrategia con datos reales
+                        </li>
+                        <li>
+                            <strong>Ventaja competitiva:</strong>
+                            Destaca frente a competidores sin presencia web
+                        </li>
+                        <li>
+                            <strong>Escalabilidad:</strong>
+                            Tu sitio crece con tu negocio sin límites físicos
+                        </li>
+                        <li>
+                            <strong>Comunicación directa:</strong>
+                            Mantén informados a tus clientes sobre novedades y ofertas
+                        </li>
+                    </ul>
+                </div>
 
-                    <div class="disadvantage-box">
-                        <h3> Consideraciones Importantes</h3>
-                        <ul>
-                            <li><strong>Inversión inicial:</strong> El desarrollo profesional requiere presupuesto dedicado</li>
-                            <li><strong>Mantenimiento continuo:</strong> Necesita actualizaciones de contenido y seguridad periódicas</li>
-                            <li><strong>Tiempo de desarrollo:</strong> Un sitio de calidad toma semanas o meses según complejidad</li>
-                            <li><strong>Hosting y dominio:</strong> Costos anuales de alojamiento y nombre de dominio</li>
-                            <li><strong>Contenido necesario:</strong> Requiere textos, imágenes y material visual de calidad</li>
-                            <li><strong>Competencia en línea:</strong> Necesitarás estrategias SEO para destacar en buscadores</li>
-                        </ul>
+                <div class="disadvantage-box">
+                    <div class="box-header">
+                        <span class="box-icon">⚠</span>
+                        <h3>Consideraciones Importantes</h3>
                     </div>
+                    <ul>
+                        <li>
+                            <strong>Inversión inicial:</strong>
+                            El desarrollo profesional requiere presupuesto dedicado
+                        </li>
+                        <li>
+                            <strong>Mantenimiento continuo:</strong>
+                            Necesita actualizaciones de contenido y seguridad periódicas
+                        </li>
+                        <li>
+                            <strong>Tiempo de desarrollo:</strong>
+                            Un sitio de calidad toma semanas o meses según complejidad
+                        </li>
+                        <li>
+                            <strong>Hosting y dominio:</strong>
+                            Costos anuales de alojamiento y nombre de dominio
+                        </li>
+                        <li>
+                            <strong>Contenido necesario:</strong>
+                            Requiere textos, imágenes y material visual de calidad
+                        </li>
+                        <li>
+                            <strong>Competencia en línea:</strong>
+                            Necesitarás estrategias SEO para destacar en buscadores
+                        </li>
+                    </ul>
                 </div>
+            </div>
 
-                <div class="info-block cta-block">
-                    <p><strong> Nuestro enfoque:</strong> No solo creamos sitios web bonitos, creamos herramientas de negocio efectivas. Incluimos capacitación para que puedas actualizar tu contenido, implementamos SEO básico desde el inicio y diseñamos pensando en la conversión de visitantes en clientes.</p>
-                </div>
+            <div class="info-block cta-block">
+                <div class="cta-icon">🎯</div>
+                <p><strong>Nuestro enfoque:</strong> No solo creamos sitios web bonitos, creamos herramientas de negocio
+                    efectivas. Incluimos capacitación para que puedas actualizar tu contenido, implementamos SEO básico
+                    desde el inicio y diseñamos pensando en la conversión de visitantes en clientes.</p>
             </div>
         </div>
     </section>
 
     <!-- EJEMPLOS DE PROYECTOS -->
-    <section class="projects">
-        <h2 class="projects-title">Ejemplos de Proyectos</h2>
-        
+    <section id="proyectos" class="projects">
+        <div class="section-header">
+            <div class="section-label">Nuestro Trabajo</div>
+            <h2 class="section-title">Ejemplos de Proyectos</h2>
+            <p class="section-description">
+                Casos de éxito de sitios web que transformaron negocios
+            </p>
+        </div>
+
         <div class="projects-grid">
             <div class="project-card">
-                <img src="../img/proyecto-web-1.png" alt="Proyecto Web 1">
-                <h3>Sitio Corporativo Empresarial</h3>
-                <p>Página web institucional con diseño moderno, secciones de servicios, portafolio de proyectos, blog corporativo y formularios de contacto integrados con CRM.</p>
-                <a href="proyecto1/proyecto1.html" class="project-btn">Inspeccionar</a>
+                <div class="project-image">
+                    <img src="../img/proyecto-web-1.png" alt="Proyecto Web 1">
+                    <div class="project-overlay">
+                        <a href="proyecto1/proyecto1.html" class="project-btn">Ver Proyecto →</a>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3>Sitio Corporativo Empresarial</h3>
+                    <p>Página web institucional con diseño moderno, secciones de servicios, portafolio de proyectos,
+                        blog corporativo y formularios de contacto integrados con CRM.</p>
+                    <div class="project-tags">
+                        <span class="tag">Responsive</span>
+                        <span class="tag">SEO</span>
+                        <span class="tag">CMS</span>
+                    </div>
+                </div>
             </div>
 
             <div class="project-card">
-                <img src="../img/proyecto-web-2.png" alt="Proyecto Web 2">
-                <h3>E-commerce con Catálogo Digital</h3>
-                <p>Tienda en línea completa con carrito de compras, pasarela de pagos, gestión de inventario, panel administrativo y sistema de seguimiento de pedidos.</p>
-                <a href="proyecto2/proyecto2.html" class="project-btn">Inspeccionar</a>
+                <div class="project-image">
+                    <img src="../img/proyecto-web-2.png" alt="Proyecto Web 2">
+                    <div class="project-overlay">
+                        <a href="proyecto2/proyecto2.html" class="project-btn">Ver Proyecto →</a>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3>E-commerce con Catálogo Digital</h3>
+                    <p>Tienda en línea completa con carrito de compras, pasarela de pagos, gestión de inventario,
+                        panel administrativo y sistema de seguimiento de pedidos.</p>
+                    <div class="project-tags">
+                        <span class="tag">E-commerce</span>
+                        <span class="tag">Pagos</span>
+                        <span class="tag">Dashboard</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- QUIÉN SOMOS -->
-    <section class="about">
-        <div class="about-content">
-            <div class="about-img">
+    <section class="about-section">
+        <div class="about-grid">
+            <div class="about-image">
                 <img src="../img/logo-big.png" alt="DECOM Logo">
             </div>
-            <div class="about-text">
+            <div class="about-content">
+                <div class="section-label">Acerca de Nosotros</div>
                 <h2>DECOM - Desarrollo y Optimización Integral de Soluciones Computacionales</h2>
                 <p>
                     Somos una empresa dedicada al desarrollo de soluciones tecnológicas
@@ -110,25 +238,73 @@
                 <p>
                     Transformamos ideas en realidad digital mediante innovación, calidad y compromiso.
                 </p>
+
+                <div class="about-features">
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Diseños modernos y responsivos</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Optimización SEO incluida</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Soporte y mantenimiento continuo</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Capacitación para gestión de contenidos</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- CONTACTO -->
-    <section class="contact">
-        <div class="contact-container">
+    <section id="contacto" class="contact-section">
+        <div class="section-header">
+            <div class="section-label">Contáctanos</div>
+            <h2 class="section-title">Hablemos de tu Proyecto Web</h2>
+            <p class="section-description">
+                ¿Listo para llevar tu negocio al siguiente nivel digital? Escríbenos y te contactaremos pronto.
+            </p>
+        </div>
+
+        <div class="contact-grid">
             <div class="contact-info">
-                <h2>Contáctanos</h2>
-                <p>¿Quieres que trabajemos juntos? Ingresa tus datos y nos pondremos en contacto contigo en breve.
-                    Esperamos tener noticias tuyas pronto.</p>
+                <h2>Información de Contacto</h2>
+                <p>
+                    Estamos aquí para ayudarte. Envíanos un mensaje y nuestro equipo
+                    te responderá en menos de 24 horas.
+                </p>
+
                 <div class="contact-details">
-                    <h3>Contacto</h3>
-                    <p>backupsystem145@gmail.com</p>
-                    <p>+57 *********</p>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">✉</div>
+                        <div>
+                            <strong>Email</strong><br>
+                            backupsystem145@gmail.com
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">📞</div>
+                        <div>
+                            <strong>Teléfono</strong><br>
+                            +57 *********
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">📍</div>
+                        <div>
+                            <strong>Ubicación</strong><br>
+                            Colombia
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="contact-form">
+            <div class="contact-form-wrapper">
                 <form>
                     <div class="form-row">
                         <div class="form-group">
@@ -148,16 +324,23 @@
 
                     <div class="form-group">
                         <label>Hablamos de tu negocio <span>(obligatorio)</span></label>
-                        <textarea name="mensaje" rows="5" required></textarea>
+                        <textarea name="mensaje" required></textarea>
                     </div>
 
-                    <button type="submit" class="submit-btn">Enviar</button>
+                    <button type="submit" class="submit-btn">Enviar Mensaje</button>
                 </form>
             </div>
         </div>
     </section>
 
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2024 DECOM - Todos los derechos reservados | Desarrollo y Optimización Integral de Soluciones
+            Computacionales</p>
+    </footer>
+
     <script src="../js/main.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
