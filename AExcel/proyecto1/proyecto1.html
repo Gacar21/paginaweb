@@ -204,7 +204,7 @@
         </div>
     </section>
 
-    <!-- GALERÍA DE IMÁGENES -->
+    <!-- GALERÍA DE IMÁGENES CON CARRUSEL -->
     <section id="galeria" class="project-gallery">
         <div class="section-header">
             <div class="section-label">Capturas</div>
@@ -214,75 +214,88 @@
             </p>
         </div>
 
-        <div class="gallery-container">
-            <div class="gallery-grid">
-                <!-- Imagen 1 -->
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="../img/proyecto1-img1.png" alt="Captura 1 del proyecto">
-                        <div class="gallery-overlay">
-                            <div class="overlay-content">
-                                <span class="overlay-icon">🔍</span>
-                                <p>Vista Principal</p>
+        <div class="carousel-container">
+            <!-- Carrusel Principal -->
+            <div class="carousel-main">
+                <button class="carousel-btn carousel-btn-prev" aria-label="Anterior">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
+
+                <div class="carousel-track-container">
+                    <div class="carousel-track">
+                        <!-- Slide 1 -->
+                        <div class="carousel-slide active">
+                            <div class="slide-image">
+                                <img src="../img/proyecto1-img1.png" alt="Vista Principal">
+                            </div>
+                            <div class="slide-content">
+                                <div class="slide-number">01</div>
+                                <h3>Panel de Control</h3>
+                                <p>Vista general del sistema con acceso a todas las funcionalidades principales</p>
                             </div>
                         </div>
-                    </div>
-                    <div class="gallery-caption">
-                        <h4>Panel de Control</h4>
-                        <p>Vista general del sistema con acceso a todas las funcionalidades</p>
+
+                        <!-- Slide 2 -->
+                        <div class="carousel-slide">
+                            <div class="slide-image">
+                                <img src="../img/proyecto1-img2.png" alt="Generación de Facturas">
+                            </div>
+                            <div class="slide-content">
+                                <div class="slide-number">02</div>
+                                <h3>Creación de Facturas</h3>
+                                <p>Interfaz intuitiva para generar facturas con cálculos automáticos y validaciones</p>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3 -->
+                        <div class="carousel-slide">
+                            <div class="slide-image">
+                                <img src="../img/proyecto1-img3.png" alt="Base de Datos">
+                            </div>
+                            <div class="slide-content">
+                                <div class="slide-number">03</div>
+                                <h3>Gestión de Datos</h3>
+                                <p>Registro y administración completa de clientes y productos del sistema</p>
+                            </div>
+                        </div>
+
+                        <!-- Slide 4 -->
+                        <div class="carousel-slide">
+                            <div class="slide-image">
+                                <img src="../img/proyecto1-img4.png" alt="Reportes">
+                            </div>
+                            <div class="slide-content">
+                                <div class="slide-number">04</div>
+                                <h3>Sistema de Reportes</h3>
+                                <p>Análisis estadístico y generación automática de reportes detallados</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Imagen 2 -->
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="../img/proyecto1-img2.png" alt="Captura 2 del proyecto">
-                        <div class="gallery-overlay">
-                            <div class="overlay-content">
-                                <span class="overlay-icon">🔍</span>
-                                <p>Generación de Facturas</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gallery-caption">
-                        <h4>Creación de Facturas</h4>
-                        <p>Interfaz intuitiva para generar facturas con cálculos automáticos</p>
-                    </div>
-                </div>
+                <button class="carousel-btn carousel-btn-next" aria-label="Siguiente">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
+            </div>
 
-                <!-- Imagen 3 -->
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="../img/proyecto1-img3.png" alt="Captura 3 del proyecto">
-                        <div class="gallery-overlay">
-                            <div class="overlay-content">
-                                <span class="overlay-icon">🔍</span>
-                                <p>Base de Datos</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gallery-caption">
-                        <h4>Gestión de Datos</h4>
-                        <p>Registro y administración de clientes y productos</p>
-                    </div>
-                </div>
-
-                <!-- Imagen 4 -->
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="../img/proyecto1-img4.png" alt="Captura 4 del proyecto">
-                        <div class="gallery-overlay">
-                            <div class="overlay-content">
-                                <span class="overlay-icon">🔍</span>
-                                <p>Reportes</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gallery-caption">
-                        <h4>Sistema de Reportes</h4>
-                        <p>Análisis estadístico y generación automática de reportes</p>
-                    </div>
-                </div>
+            <!-- Indicadores y Miniaturas -->
+            <div class="carousel-indicators">
+                <button class="indicator active" data-slide="0">
+                    <img src="../img/proyecto1-img1.png" alt="Miniatura 1">
+                </button>
+                <button class="indicator" data-slide="1">
+                    <img src="../img/proyecto1-img2.png" alt="Miniatura 2">
+                </button>
+                <button class="indicator" data-slide="2">
+                    <img src="../img/proyecto1-img3.png" alt="Miniatura 3">
+                </button>
+                <button class="indicator" data-slide="3">
+                    <img src="../img/proyecto1-img4.png" alt="Miniatura 4">
+                </button>
             </div>
         </div>
     </section>

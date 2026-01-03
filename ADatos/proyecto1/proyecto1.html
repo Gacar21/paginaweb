@@ -216,85 +216,80 @@
         </div>
     </section>
 
-    <!-- GALERÍA DE IMÁGENES -->
+    <!-- GALERÍA DE IMÁGENES CON CARRUSEL -->
     <section id="galeria" class="project-gallery">
         <div class="section-header">
             <div class="section-label">Capturas</div>
             <h2 class="section-title">Galería del Proyecto</h2>
             <p class="section-description">
-                Explora las diferentes vistas y funcionalidades del dashboard
+                Explora las diferentes funcionalidades del sistema CRM
             </p>
         </div>
 
-        <div class="gallery-container">
-            <div class="gallery-grid">
-                <!-- Imagen 1 -->
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="../../img/dashboard1.png" alt="Captura 1 del proyecto">
-                        <div class="gallery-overlay">
-                            <div class="overlay-content">
-                                <span class="overlay-icon">🔍</span>
-                                <p>Vista Principal</p>
+        <div class="carousel-container">
+            <!-- Carrusel Principal -->
+            <div class="carousel-main">
+                <button class="carousel-btn carousel-btn-prev" aria-label="Anterior">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
+
+                <div class="carousel-track-container">
+                    <div class="carousel-track">
+                        <!-- Slide 1 -->
+                        <div class="carousel-slide active">
+                            <div class="slide-image">
+                                <img src="../../img/dashbordEjecutivo1.png" alt="Vista Principal">
+                            </div>
+                            <div class="slide-content">
+                                <div class="slide-number">01</div>
+                                <h3>Panel Principal</h3>
+                                <p>Vista general con métricas principales y gráficos de tendencias en tiempo real</p>
                             </div>
                         </div>
-                    </div>
-                    <div class="gallery-caption">
-                        <h4>Panel Principal</h4>
-                        <p>Vista general con métricas principales y gráficos de tendencias</p>
+
+                        <!-- Slide 2 -->
+                        <div class="carousel-slide">
+                            <div class="slide-image">
+                                <img src="../../img/dashbordEjecutivo2.png" alt="Análisis Detallado">
+                            </div>
+                            <div class="slide-content">
+                                <div class="slide-number">02</div>
+                                <h3>Análisis de Ventas</h3>
+                                <p>Desglose detallado por categorías y períodos de tiempo con filtros dinámicos</p>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3 -->
+                        <div class="carousel-slide">
+                            <div class="slide-image">
+                                <img src="../../img/dashbordEjecutivo3.png" alt="Reportes">
+                            </div>
+                            <div class="slide-content">
+                                <div class="slide-number">03</div>
+                                <h3>Sistema de Reportes</h3>
+                                <p>Generación automática de informes personalizados y exportación de datos</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Imagen 2 -->
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="../../img/dashboard2.png" alt="Captura 2 del proyecto">
-                        <div class="gallery-overlay">
-                            <div class="overlay-content">
-                                <span class="overlay-icon">🔍</span>
-                                <p>Análisis Detallado</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gallery-caption">
-                        <h4>Análisis de Ventas</h4>
-                        <p>Desglose detallado por categorías y períodos de tiempo</p>
-                    </div>
-                </div>
+                <button class="carousel-btn carousel-btn-next" aria-label="Siguiente">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
+            </div>
 
-                <!-- Imagen 3 -->
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="../../img/dashboard3.png" alt="Captura 3 del proyecto">
-                        <div class="gallery-overlay">
-                            <div class="overlay-content">
-                                <span class="overlay-icon">🔍</span>
-                                <p>Reportes</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gallery-caption">
-                        <h4>Sistema de Reportes</h4>
-                        <p>Generación automática de informes personalizados</p>
-                    </div>
-                </div>
-
-                <!-- Imagen 4 -->
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="../../img/dashboard4.png" alt=Captura 4 del proyecto">
-                        <div class="gallery-overlay">
-                            <div class="overlay-content">
-                                <span class="overlay-icon">🔍</span>
-                                <p>Vista Móvil</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gallery-caption">
-                        <h4>Versión Responsive</h4>
-                        <p>Adaptación perfecta a dispositivos móviles y tablets</p>
-                    </div>
-                </div>
+            <!-- Indicadores y Miniaturas -->
+            <div class="carousel-indicators">
+                <button class="indicator active" data-slide="0">
+                    <img src="../../img/gestionCliente1.png" alt="Miniatura 1">
+                </button>
+                <button class="indicator" data-slide="1">
+                    <img src="../../img/gestionCliente2.png" alt="Miniatura 2">
+                </button>
             </div>
         </div>
     </section>

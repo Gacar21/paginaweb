@@ -197,7 +197,7 @@
         </div>
     </section>
 
-    <!-- GALERÍA DE IMÁGENES -->
+    <!-- GALERÍA DE IMÁGENES CON CARRUSEL -->
     <section id="galeria" class="project-gallery">
         <div class="section-header">
             <div class="section-label">Capturas</div>
@@ -207,75 +207,59 @@
             </p>
         </div>
 
-        <div class="gallery-container">
-            <div class="gallery-grid">
-                <!-- Imagen 1 -->
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="../img/proyecto1-img1.png" alt="Captura 1 del proyecto">
-                        <div class="gallery-overlay">
-                            <div class="overlay-content">
-                                <span class="overlay-icon">🔍</span>
-                                <p>Dashboard Principal</p>
+        <div class="carousel-container">
+            <!-- Carrusel Principal -->
+            <div class="carousel-main">
+                <button class="carousel-btn carousel-btn-prev" aria-label="Anterior">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
+
+                <div class="carousel-track-container">
+                    <div class="carousel-track">
+                        <!-- Slide 1 -->
+                        <div class="carousel-slide active">
+                            <div class="slide-image">
+                                <img src="../../img/comportamientoCliente1.png" alt="Dashboard Principal">
+                            </div>
+                            <div class="slide-content">
+                                <div class="slide-number">01</div>
+                                <h3>Panel de Control</h3>
+                                <p>Vista general con métricas clave y KPIs principales del comportamiento del cliente
+                                </p>
                             </div>
                         </div>
-                    </div>
-                    <div class="gallery-caption">
-                        <h4>Panel de Control</h4>
-                        <p>Vista general con métricas clave y KPIs principales del comportamiento del cliente</p>
+
+                        <!-- Slide 2 -->
+                        <div class="carousel-slide">
+                            <div class="slide-image">
+                                <img src="../../img/ComportamientoCliente 2.png" alt="Análisis de Datos">
+                            </div>
+                            <div class="slide-content">
+                                <div class="slide-number">02</div>
+                                <h3>Módulo de Análisis</h3>
+                                <p>Herramientas de análisis profundo con visualizaciones y gráficos interactivos</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Imagen 2 -->
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="../img/proyecto1-img2.png" alt="Captura 2 del proyecto">
-                        <div class="gallery-overlay">
-                            <div class="overlay-content">
-                                <span class="overlay-icon">🔍</span>
-                                <p>Análisis de Datos</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gallery-caption">
-                        <h4>Módulo de Análisis</h4>
-                        <p>Herramientas de análisis profundo con visualizaciones y gráficos interactivos</p>
-                    </div>
-                </div>
+                <button class="carousel-btn carousel-btn-next" aria-label="Siguiente">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
+            </div>
 
-                <!-- Imagen 3 -->
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="../img/proyecto1-img3.png" alt="Captura 3 del proyecto">
-                        <div class="gallery-overlay">
-                            <div class="overlay-content">
-                                <span class="overlay-icon">🔍</span>
-                                <p>Segmentación</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gallery-caption">
-                        <h4>Segmentación de Clientes</h4>
-                        <p>Clasificación automática de clientes según patrones de comportamiento</p>
-                    </div>
-                </div>
-
-                <!-- Imagen 4 -->
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="../img/proyecto1-img4.png" alt="Captura 4 del proyecto">
-                        <div class="gallery-overlay">
-                            <div class="overlay-content">
-                                <span class="overlay-icon">🔍</span>
-                                <p>Reportes</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gallery-caption">
-                        <h4>Sistema de Reportes</h4>
-                        <p>Generación automática de reportes personalizados y exportables</p>
-                    </div>
-                </div>
+            <!-- Indicadores y Miniaturas -->
+            <div class="carousel-indicators">
+                <button class="indicator active" data-slide="0">
+                    <img src="../../img/comportamientoCliente1.png" alt="Miniatura 1">
+                </button>
+                <button class="indicator" data-slide="1">
+                    <img src="../../img/ComportamientoCliente 2.png" alt="Miniatura 2">
+                </button>
             </div>
         </div>
     </section>

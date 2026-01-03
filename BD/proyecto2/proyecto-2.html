@@ -206,7 +206,7 @@
         </div>
     </section>
 
-    <!-- GALERÍA DE IMÁGENES -->
+    <!-- GALERÍA DE IMÁGENES CON CARRUSEL -->
     <section id="galeria" class="project-gallery">
         <div class="section-header">
             <div class="section-label">Capturas</div>
@@ -216,77 +216,63 @@
             </p>
         </div>
 
-        <div class="gallery-container">
-            <div class="gallery-grid">
-                <!-- Imagen 1 -->
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="../img/proyecto1-img1.png" alt="Captura 1 del proyecto">
-                        <div class="gallery-overlay">
-                            <div class="overlay-content">
-                                <span class="overlay-icon">🔍</span>
-                                <p>Panel de Clientes</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gallery-caption">
-                        <h4>Dashboard Principal</h4>
-                        <p>Vista general con métricas de clientes y oportunidades activas</p>
-                    </div>
-                </div>
+        <div class="carousel-container">
+            <!-- Carrusel Principal -->
+            <div class="carousel-main">
+                <button class="carousel-btn carousel-btn-prev" aria-label="Anterior">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
 
-                <!-- Imagen 2 -->
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="../img/proyecto1-img2.png" alt="Captura 2 del proyecto">
-                        <div class="gallery-overlay">
-                            <div class="overlay-content">
-                                <span class="overlay-icon">🔍</span>
-                                <p>Gestión de Contactos</p>
+                <div class="carousel-track-container">
+                    <div class="carousel-track">
+                        <!-- Slide 1 -->
+                        <div class="carousel-slide active">
+                            <div class="slide-image">
+                                <img src="../../img/gestionCliente1.png" alt="Panel de Clientes">
+                            </div>
+                            <div class="slide-content">
+                                <div class="slide-number">01</div>
+                                <h3>Dashboard Principal</h3>
+                                <p>Vista general con métricas de clientes y oportunidades activas en tiempo real</p>
                             </div>
                         </div>
-                    </div>
-                    <div class="gallery-caption">
-                        <h4>Base de Datos de Clientes</h4>
-                        <p>Sistema de registro y búsqueda avanzada de clientes</p>
-                    </div>
-                </div>
 
-                <!-- Imagen 3 -->
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="../img/proyecto1-img3.png" alt="Captura 3 del proyecto">
-                        <div class="gallery-overlay">
-                            <div class="overlay-content">
-                                <span class="overlay-icon">🔍</span>
-                                <p>Pipeline de Ventas</p>
+                        <!-- Slide 2 -->
+                        <div class="carousel-slide">
+                            <div class="slide-image">
+                                <img src="../../img/gestionCliente2.png" alt="Gestión de Contactos">
+                            </div>
+                            <div class="slide-content">
+                                <div class="slide-number">02</div>
+                                <h3>Base de Datos de Clientes</h3>
+                                <p>Sistema de registro y búsqueda avanzada de clientes con filtros dinámicos</p>
                             </div>
                         </div>
-                    </div>
-                    <div class="gallery-caption">
-                        <h4>Seguimiento de Oportunidades</h4>
-                        <p>Control visual del embudo de ventas y conversión</p>
-                    </div>
-                </div>
-
-                <!-- Imagen 4 -->
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="../img/proyecto1-img4.png" alt="Captura 4 del proyecto">
-                        <div class="gallery-overlay">
-                            <div class="overlay-content">
-                                <span class="overlay-icon">🔍</span>
-                                <p>Reportes y Analytics</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gallery-caption">
-                        <h4>Análisis y Reportes</h4>
-                        <p>Generación de informes detallados y estadísticas de ventas</p>
                     </div>
                 </div>
             </div>
+
+            <button class="carousel-btn carousel-btn-next" aria-label="Siguiente">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
         </div>
+
+        <!-- Indicadores y Miniaturas -->
+        <div class="carousel-indicators">
+            <button class="indicator active" data-slide="0">
+                <img src="../../img/gestionCliente1.png" alt="Miniatura 1">
+            </button>
+            <button class="indicator" data-slide="1">
+                <img src="../../img/gestionCliente2.png" alt="Miniatura 2">
+            </button>
+        </div>
+        </div>
+    </section>
+
     </section>
 
     <!-- QUIÉN SOMOS -->

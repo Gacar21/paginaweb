@@ -207,7 +207,7 @@
         </div>
     </section>
 
-    <!-- GALERÍA DE IMÁGENES -->
+    <!-- GALERÍA DE IMÁGENES CON CARRUSEL -->
     <section id="galeria" class="project-gallery">
         <div class="section-header">
             <div class="section-label">Capturas</div>
@@ -217,75 +217,60 @@
             </p>
         </div>
 
-        <div class="gallery-container">
-            <div class="gallery-grid">
-                <!-- Imagen 1 -->
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="../img/proyecto1-img1.png" alt="Captura 1 del proyecto">
-                        <div class="gallery-overlay">
-                            <div class="overlay-content">
-                                <span class="overlay-icon">🔍</span>
-                                <p>Dashboard Principal</p>
+        <div class="carousel-container">
+            <!-- Carrusel Principal -->
+            <div class="carousel-main">
+                <button class="carousel-btn carousel-btn-prev" aria-label="Anterior">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
+
+                <div class="carousel-track-container">
+                    <div class="carousel-track">
+                        <!-- Slide 1 -->
+                        <div class="carousel-slide active">
+                            <div class="slide-image">
+                                <img src="../../img/sistemaBI1.png" alt="Dashboard Principal">
+                            </div>
+                            <div class="slide-content">
+                                <div class="slide-number">01</div>
+                                <h3>Dashboard Ejecutivo</h3>
+                                <p>Vista general con indicadores clave y métricas de todas las áreas de negocio en
+                                    tiempo real</p>
                             </div>
                         </div>
-                    </div>
-                    <div class="gallery-caption">
-                        <h4>Dashboard Ejecutivo</h4>
-                        <p>Vista general con indicadores clave y métricas de todas las áreas de negocio</p>
+
+                        <!-- Slide 2 -->
+                        <div class="carousel-slide">
+                            <div class="slide-image">
+                                <img src="../../img/sistemaBI2.png" alt="Análisis de Ventas">
+                            </div>
+                            <div class="slide-content">
+                                <div class="slide-number">02</div>
+                                <h3>Módulo de Ventas</h3>
+                                <p>Análisis detallado de rendimiento comercial, tendencias y proyecciones estratégicas
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Imagen 2 -->
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="../img/proyecto1-img2.png" alt="Captura 2 del proyecto">
-                        <div class="gallery-overlay">
-                            <div class="overlay-content">
-                                <span class="overlay-icon">🔍</span>
-                                <p>Análisis de Ventas</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gallery-caption">
-                        <h4>Módulo de Ventas</h4>
-                        <p>Análisis detallado de rendimiento comercial, tendencias y proyecciones</p>
-                    </div>
-                </div>
+                <button class="carousel-btn carousel-btn-next" aria-label="Siguiente">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
+            </div>
 
-                <!-- Imagen 3 -->
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="../img/proyecto1-img3.png" alt="Captura 3 del proyecto">
-                        <div class="gallery-overlay">
-                            <div class="overlay-content">
-                                <span class="overlay-icon">🔍</span>
-                                <p>Reportes Financieros</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gallery-caption">
-                        <h4>Módulo Financiero</h4>
-                        <p>Reportes financieros detallados con análisis de ingresos, gastos y rentabilidad</p>
-                    </div>
-                </div>
-
-                <!-- Imagen 4 -->
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="../img/proyecto1-img4.png" alt="Captura 4 del proyecto">
-                        <div class="gallery-overlay">
-                            <div class="overlay-content">
-                                <span class="overlay-icon">🔍</span>
-                                <p>Gestión de Inventario</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gallery-caption">
-                        <h4>Control de Inventario</h4>
-                        <p>Monitoreo en tiempo real de stock, movimientos y alertas de reabastecimiento</p>
-                    </div>
-                </div>
+            <!-- Indicadores y Miniaturas -->
+            <div class="carousel-indicators">
+                <button class="indicator active" data-slide="0">
+                    <img src="../../img/sistemaBI1.png" alt="Miniatura 1">
+                </button>
+                <button class="indicator" data-slide="1">
+                    <img src="../../img/sistemaBI2.png" alt="Miniatura 2">
+                </button>
             </div>
         </div>
     </section>
