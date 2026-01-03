@@ -253,13 +253,13 @@ document.addEventListener('DOMContentLoaded', animateNumbers);
 // EFECTO PARALLAX EN HERO
 // ====================================
 //window.addEventListener('scroll', () => {
-    //const scrolled = window.pageYOffset;
-   // const hero = document.querySelector('.hero-content');
+//const scrolled = window.pageYOffset;
+// const hero = document.querySelector('.hero-content');
 
-    //if (hero && scrolled < window.innerHeight) {
-   //     hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-  //      hero.style.opacity = 1 - (scrolled / window.innerHeight);
- //   }
+//if (hero && scrolled < window.innerHeight) {
+//     hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+//      hero.style.opacity = 1 - (scrolled / window.innerHeight);
+//   }
 //});
 
 // ====================================
@@ -285,3 +285,189 @@ if (contactForm) {
         contactForm.reset();
     });
 }
+
+// ====================================
+// CARRUSEL DE GALERÍA
+// ====================================
+
+class GalleryCarousel {
+    constructor() {
+        this.track = document.querySelector('.carousel-track');
+        this.slides = Array.from(document.querySelectorAll('.carousel-slide'));
+        this.indicators = Array.from(document.querySelectorAll('.indicator'));
+        this.prevBtn = document.querySelector('.carousel-btn-prev');
+        this.nextBtn = document.querySelector('.carousel-btn-next');
+
+        this.currentSlide = 0;
+        this.isAnimating = false;
+        this.autoplayInterval = null;
+        this.autoplayDelay = 5000; // 5 segundos
+
+        this.init();
+    }
+
+    init() {
+        // Event listeners para botones
+        this.prevBtn.addEventListener('click', () => this.prevSlide());
+        this.nextBtn.addEventListener('click', () => this.nextSlide());
+
+        // Event listeners para indicadores
+        this.indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => this.goToSlide(index));
+        });
+
+        // Soporte táctil para móviles
+        this.addTouchSupport();
+
+        // Teclado
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') this.prevSlide();
+            if (e.key === 'ArrowRight') this.nextSlide();
+        });
+
+        // Autoplay
+        this.startAutoplay();
+
+        // Pausar autoplay al hover
+        const carousel = document.querySelector('.carousel-main');
+        carousel.addEventListener('mouseenter', () => this.stopAutoplay());
+        carousel.addEventListener('mouseleave', () => this.startAutoplay());
+
+        // Pausar autoplay cuando no está visible
+        this.addVisibilitySupport();
+    }
+
+    goToSlide(index) {
+        if (this.isAnimating || index === this.currentSlide) return;
+
+        this.isAnimating = true;
+
+        // Remover clase active de slide actual
+        this.slides[this.currentSlide].classList.remove('active');
+        this.indicators[this.currentSlide].classList.remove('active');
+
+        // Actualizar índice
+        this.currentSlide = index;
+
+        // Mover el track
+        const slideWidth = this.slides[0].offsetWidth;
+        this.track.style.transform = `translateX(-${slideWidth * this.currentSlide}px)`;
+
+        // Agregar clase active al nuevo slide
+        setTimeout(() => {
+            this.slides[this.currentSlide].classList.add('active');
+            this.indicators[this.currentSlide].classList.add('active');
+            this.isAnimating = false;
+        }, 100);
+    }
+
+    nextSlide() {
+        const nextIndex = (this.currentSlide + 1) % this.slides.length;
+        this.goToSlide(nextIndex);
+    }
+
+    prevSlide() {
+        const prevIndex = (this.currentSlide - 1 + this.slides.length) % this.slides.length;
+        this.goToSlide(prevIndex);
+    }
+
+    startAutoplay() {
+        this.stopAutoplay(); // Limpiar cualquier intervalo existente
+        this.autoplayInterval = setInterval(() => {
+            this.nextSlide();
+        }, this.autoplayDelay);
+    }
+
+    stopAutoplay() {
+        if (this.autoplayInterval) {
+            clearInterval(this.autoplayInterval);
+            this.autoplayInterval = null;
+        }
+    }
+
+    addTouchSupport() {
+        let startX = 0;
+        let currentX = 0;
+        let isDragging = false;
+
+        const carousel = document.querySelector('.carousel-track-container');
+
+        carousel.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+            isDragging = true;
+            this.stopAutoplay();
+        });
+
+        carousel.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            currentX = e.touches[0].clientX;
+        });
+
+        carousel.addEventListener('touchend', () => {
+            if (!isDragging) return;
+
+            const diff = startX - currentX;
+            const threshold = 50; // Mínimo de píxeles para cambiar slide
+
+            if (Math.abs(diff) > threshold) {
+                if (diff > 0) {
+                    this.nextSlide();
+                } else {
+                    this.prevSlide();
+                }
+            }
+
+            isDragging = false;
+            this.startAutoplay();
+        });
+    }
+
+    addVisibilitySupport() {
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                this.stopAutoplay();
+            } else {
+                this.startAutoplay();
+            }
+        });
+    }
+}
+
+// Inicializar el carrusel cuando el DOM esté listo
+document.addEventListener('DOMContentLoaded', () => {
+    const carousel = new GalleryCarousel();
+
+    // Agregar efecto parallax suave al scroll
+    const addParallaxEffect = () => {
+        const gallerySection = document.querySelector('.project-gallery');
+        if (!gallerySection) return;
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        observer.observe(gallerySection);
+    };
+
+    addParallaxEffect();
+});
+
+// Redimensionar ventana
+window.addEventListener('resize', () => {
+    const track = document.querySelector('.carousel-track');
+    const slides = document.querySelectorAll('.carousel-slide');
+    const currentSlide = document.querySelector('.carousel-slide.active');
+
+    if (track && slides.length > 0 && currentSlide) {
+        const slideWidth = slides[0].offsetWidth;
+        const currentIndex = Array.from(slides).indexOf(currentSlide);
+        track.style.transform = `translateX(-${slideWidth * currentIndex}px)`;
+    }
+});
